@@ -2,93 +2,87 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background: black;
     color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;    background-image: url('images/Adsız.png');
-    background-size: cover; /* Görseli tam olarak arka plan alanına yayar */
+    font-family: Bahnschrift, sans-serif;
+    text-align: center;
+    background-image: url('images/Adsız.png');
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto; /* Scrollbar aktif olsun */
 }
-
-
-
-/* Matrix Efekti */
-#matrixCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-/* İçerik */
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /* Logo */
 .logo {
     max-width: 400px;
     border-radius: 10px;
 }
+/* İçerik */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Üstten biraz boşluk ekleyelim */
+}
 
-/* Sosyal Medya İkonları */
-.socials {
+/* Hakkımda Kısmı */
+.about {
+    max-width: 400px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Çalışmalar (Works) */
+.works-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     margin-top: 20px;
 }
 
-.socials a img {
-    width: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s;
+.works-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 800px;
 }
 
-.socials a img:hover {
-    transform: scale(1.2);
-}
-@font-face {
-    font-family: 'Adumu';
-    src: url('images/adumu.woff') format('woff');
-}
-.search-container h1 {
-    font-family: 'Adumu', sans-serif;
-    font-size: 48px;
-    color: white; /* İç renk */
-    -webkit-text-stroke: 2px #003d0f; /* WebKit Tarayıcılar için Dış çizgi */
-    text-shadow:
-            -2px -2px 0 #003d0f,
-            2px -2px 0 #003d0f,
-            -2px 2px 0 #003d0f,
-            2px 2px 0 #003d0f; /* Diğer Tarayıcılar için Stroke Efekti */
+.work-item {
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-input[type="text"] {
-    width: 80%;
-    padding: 12px 20px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
+.work-item img {
+    width: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.work-item:hover img {
+    transform: scale(5) translateY(-60px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Çalışma Açıklamaları */
+.work-item p {
+    margin-top: 10px;
     font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    font-weight: bold;
 }
-input[type="text"]:focus {
-    border-color: #4285f4; /* Blue border on focus */
+
+.eren{
+    color: red;
 }
-button {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 50%;
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: #357ae8;
+
+.aygen{
+    color: green;
 }
