@@ -7,6 +7,97 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/Men.svg" type="image/x-icon">
 </head>
+<style>
+    /* Genel Stil */
+    body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        color: white;
+        font-family: Bahnschrift, sans-serif;
+        text-align: center;
+        background-image: url('images/Adsız.png');
+        background-size: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto; /* Scrollbar aktif olsun */
+    }
+    /* Logo */
+    .logo {
+        max-width: 400px;
+        border-radius: 10px;
+    }
+    /* İçerik */
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px; /* Üstten biraz boşluk ekleyelim */
+    }
+
+    /* Hakkımda Kısmı */
+    .about {
+        max-width: 400px;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    /* Çalışmalar (Works) */
+    .works-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .works-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        max-width: 800px;
+    }
+
+    .work-item {
+        position: relative;
+        text-align: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .work-item img {
+        width: 150px;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .work-item:hover img {
+        transform: scale(5) translateY(-60px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Çalışma Açıklamaları */
+    .work-item p {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .eren{
+        color: red;
+    }
+
+    .aygen{
+        color: green;
+    }
+
+</style>
 <body>
 
 <!-- Hakkımda Kısmı -->
