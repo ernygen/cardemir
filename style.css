@@ -86,3 +86,24 @@ body {
 .aygen{
     color: green;
 }
+
+/* Sosyal Medya İkonları */
+.socials {
+    margin-top: 20px;
+}
+
+.socials a img {
+    width: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.socials a img:hover {
+    transform: scale(1.2);
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
