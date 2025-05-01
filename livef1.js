@@ -32,13 +32,14 @@ function LiveF1Table() {
             </tr>
           </thead>
           <tbody>
-            {data.slice(1).map((row, i) => (
-              <tr key={i}>
-                {Object.values(row).map((cell, j) => (
-                  <td key={j}>{cell}</td>
-                ))}
-              </tr>
-            ))}
+            {data.length > 1 &&
+              data.map((row, i) => (
+                <tr key={i}>
+                  {Object.values(row).map((cell, j) => (
+                    <td key={j}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
