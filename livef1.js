@@ -34,9 +34,16 @@ function LiveF1Table() {
           <tbody>
             {data.map((row, i) => (
               <tr key={i}>
-                {Object.values(row).map((cell, j) => (
-                  <td key={j}>{cell}</td>
-                ))}
+                {Object.entries(row).map(([key, cell], j) => {
+                  // Eğer renk bilgisini içeriyorsa (örneğin 'color' alanı)
+                  const cellStyle = row['color'] ? { backgroundColor: row['color'] } : {};
+  
+                  return (
+                    <td key={j} style={cellStyle}>
+                      {cell}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
