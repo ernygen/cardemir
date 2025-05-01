@@ -25,7 +25,7 @@ function LiveF1Table() {
         <table border="1">
           <thead>
             <tr>
-              {data[0] &&
+              {data.length > 0 &&
                 Object.keys(data[0]).map((header, i) => (
                   <th key={i}>{header}</th>
                 ))}
