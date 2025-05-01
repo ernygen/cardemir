@@ -19,6 +19,30 @@ function LiveF1Table() {
       return () => clearInterval(interval);
     }, []);
   
+    // Renk eşlemelerini sürücüye göre yapıyoruz
+    const driverColors = {
+      "Max Verstappen": "darkblue",
+      "Yuki Tsunoda": "darkblue",
+      "Lewis Hamilton": "red",
+      "Charles Leclerc": "red",
+      "Lando Norris": "orange",
+      "Oscar Piastri": "orange",
+      "George Russell": "silver",
+      "A. Kimi Antonelli": "silver",
+      "Fernando Alonso": "darkgreen",
+      "Lance Stroll": "darkgreen",
+      "Liam Lawson": "turquoise",
+      "Isack Hadjar": "turquoise",
+      "Oliver Bearman": "white",
+      "Esteban Ocon": "white",
+      "Pierre Gasly": "pink",
+      "Jack Doohan": "pink",
+      "Alex Albon": "blue",
+      "Carlos Sainz": "blue",
+      "Nico Hülkenberg": "green",
+      "Gabriel Bortoletto": "green"
+    };
+  
     return (
       <div>
         <h1>Canlı F1 Puan Durumu</h1>
@@ -35,8 +59,9 @@ function LiveF1Table() {
             {data.map((row, i) => (
               <tr key={i}>
                 {Object.entries(row).map(([key, cell], j) => {
-                  // Eğer renk bilgisini içeriyorsa (örneğin 'color' alanı)
-                  const cellStyle = row['color'] ? { backgroundColor: row['color'] } : {};
+                  // Sürücünün adı varsa ve renk eşlemesi mevcutsa
+                  const color = driverColors[row["Sürücü"]] || "white"; // Varsayılan renk beyaz
+                  const cellStyle = key === "Sürücü" ? { backgroundColor: color } : {}; // Sadece "Sürücü" hücresine renk ekleyelim
   
                   return (
                     <td key={j} style={cellStyle}>
