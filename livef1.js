@@ -4,11 +4,15 @@ function LiveF1Table() {
     React.useEffect(() => {
       const fetchSheet = async () => {
         try {
-          const res = await fetch(
-            "https://opensheet.elk.sh/184-vi4ZapBokjwpvfMABFfGhjvwZVvMWlnn4NkdqkmY/s%C3%BCr%C3%BCc%C3%BC%20listesi"
-          );
-          const json = await res.json();
-          setData(json);
+          const res = await Promise.all([
+            fetch("https://opensheet.elk.sh/184-vi4ZapBokjwpvfMABFfGhjvwZVvMWlnn4NkdqkmY/1"),
+            fetch("https://opensheet.elk.sh/184-vi4ZapBokjwpvfMABFfGhjvwZVvMWlnn4NkdqkmY/2"),
+            fetch("https://opensheet.elk.sh/184-vi4ZapBokjwpvfMABFfGhjvwZVvMWlnn4NkdqkmY/3"),
+            fetch("https://opensheet.elk.sh/184-vi4ZapBokjwpvfMABFfGhjvwZVvMWlnn4NkdqkmY/4")
+          ]);
+          const dataResponses = await Promise.all(res.map((r) => r.json()));
+          // Flatten the data if needed
+          setData(dataResponses[0]); // You may change this depending on how you want to combine the sheets
         } catch (err) {
           console.error("Veri çekme hatası:", err);
         }
@@ -43,9 +47,15 @@ function LiveF1Table() {
       "Gabriel Bortoletto": { background: "green", text: "white" }
     };
   
+    // Render navigation links for different sheets
     return (
       <div>
-        <h1>Canlı F1 Puan Durumu</h1>
+        <nav>
+            <a href="#1" onClick={() => setData(data[0])}>Driver Points</a> | 
+            <a href="#2" onClick={() => setData(data[1])}>Teams Points</a> | 
+            <a href="#3" onClick={() => setData(data[2])}>Positions Gained Championship</a> | 
+            <a href="#4" onClick={() => setData(data[3])}>All Time Points</a>
+        </nav>
         <table border="1">
           <thead>
             <tr>
@@ -80,5 +90,4 @@ function LiveF1Table() {
     );
   }
   
-  ReactDOM.createRoot(document.getElementById("root")).render(<LiveF1Table />);
-  
+ReactDOM.createRoot(document.getElementById("root")).render(<LiveF1Table />);
