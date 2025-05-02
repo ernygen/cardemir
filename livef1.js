@@ -47,6 +47,8 @@ function LiveF1Table() {
       "Gabriel Bortoletto": { background: "green", text: "white" }
     };
   
+    const sortedRows = [...rows].sort((a, b) => parseInt(b.Total) - parseInt(a.Total));
+
     // Render navigation links for different sheets
     return (
       <div>
