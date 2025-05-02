@@ -71,37 +71,38 @@ function LiveF1Table() {
                 {Object.entries(row).map(([key, cell], j) => {
   const driverColor = driverColors[row["Sürücü"]] || { background: "white", text: "black" };
 
-  // Sadece sürücü hücresi için sürücü rengi uygula
-  const isDriverCell = key === "Sürücü";
-  const cellStyle = isDriverCell ? {
-    backgroundColor: driverColor.background,
-    color: driverColor.text
-  } : {};
+  // Hücre değerine göre özel stil belirle
+  let cellStyle = {};
+  if (cell === "DNF") cellStyle = { backgroundColor: "black", color: "white", fontWeight: "bold" };
+  else if (cell === "DSQ") cellStyle = { backgroundColor: "purple", color: "white", fontWeight: "bold" };
+  else if (cell === "DNS") cellStyle = { backgroundColor: "gray", color: "white", fontWeight: "bold" };
+  else if (cell === "25") cellStyle = { backgroundColor: "gold", color: "black", fontWeight: "bold" };
+  else if (cell === "18") cellStyle = { backgroundColor: "#ffcc00", color: "black", fontWeight: "bold" };
+  else if (cell === "15") cellStyle = { backgroundColor: "#ff9900", color: "black" };
+  else if (cell === "12") cellStyle = { backgroundColor: "#ff6600", color: "black" };
+  else if (cell === "10") cellStyle = { backgroundColor: "#ff3300", color: "white" };
+  else if (cell === "8")  cellStyle = { backgroundColor: "#cc3300", color: "white" };
+  else if (cell === "6")  cellStyle = { backgroundColor: "#993300", color: "white" };
+  else if (cell === "4")  cellStyle = { backgroundColor: "#662200", color: "white" };
+  else if (cell === "2")  cellStyle = { backgroundColor: "#331100", color: "white" };
+  else if (cell === "1")  cellStyle = { backgroundColor: "#1a0a00", color: "white" };
+  else if (cell === "0")  cellStyle = { backgroundColor: "dimgray", color: "white" };
 
-  // Hücre değerine göre özel stil uygula
-  const cellContentStyle = {
-    ...(cell === "DNF" && { backgroundColor: "black", color: "white", fontWeight: "bold" }),
-    ...(cell === "DSQ" && { backgroundColor: "purple", color: "white", fontWeight: "bold" }),
-    ...(cell === "DNS" && { backgroundColor: "gray", color: "white", fontWeight: "bold" }),
-    ...(cell === "25" && { backgroundColor: "gold", color: "black", fontWeight: "bold" }),
-    ...(cell === "18" && { backgroundColor: "#ffcc00", color: "black", fontWeight: "bold" }),
-    ...(cell === "15" && { backgroundColor: "#ff9900", color: "black" }),
-    ...(cell === "12" && { backgroundColor: "#ff6600", color: "black" }),
-    ...(cell === "10" && { backgroundColor: "#ff3300", color: "white" }),
-    ...(cell === "8" && { backgroundColor: "#cc3300", color: "white" }),
-    ...(cell === "6" && { backgroundColor: "#993300", color: "white" }),
-    ...(cell === "4" && { backgroundColor: "#662200", color: "white" }),
-    ...(cell === "2" && { backgroundColor: "#331100", color: "white" }),
-    ...(cell === "1" && { backgroundColor: "#1a0a00", color: "white" }),
-    ...(cell === "0" && { backgroundColor: "dimgray", color: "white" })
-  };
+  // Eğer özel stil yoksa ve bu hücre "Sürücü" ise takım rengini uygula
+  if (Object.keys(cellStyle).length === 0 && key === "Sürücü") {
+    cellStyle = {
+      backgroundColor: driverColor.background,
+      color: driverColor.text
+    };
+  }
 
   return (
-    <td key={j} style={{ ...cellStyle, ...cellContentStyle }}>
+    <td key={j} style={cellStyle}>
       {cell}
     </td>
   );
 })}
+
 
               </tr>
             ))}
