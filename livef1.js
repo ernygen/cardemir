@@ -69,19 +69,40 @@ function LiveF1Table() {
             {data.map((row, i) => (
               <tr key={i}>
                 {Object.entries(row).map(([key, cell], j) => {
-                  // Sürücünün adı varsa ve renk eşlemesi mevcutsa
-                  const driverColor = driverColors[row["Sürücü"]] || { background: "white", text: "black" }; // Varsayılan renk beyaz ve siyah yazı
-                  const cellStyle = key === "Sürücü" ? {
-                    backgroundColor: driverColor.background,
-                    color: driverColor.text
-                  } : {}; // Sadece "Sürücü" hücresine renk ekleyelim
-  
-                  return (
-                    <td key={j} style={cellStyle}>
-                      {cell}
-                    </td>
-                  );
-                })}
+  const driverColor = driverColors[row["Sürücü"]] || { background: "white", text: "black" };
+
+  // Sadece sürücü hücresi için sürücü rengi uygula
+  const isDriverCell = key === "Sürücü";
+  const cellStyle = isDriverCell ? {
+    backgroundColor: driverColor.background,
+    color: driverColor.text
+  } : {};
+
+  // Hücre değerine göre özel stil uygula
+  const cellContentStyle = {
+    ...(cell === "DNF" && { backgroundColor: "black", color: "white", fontWeight: "bold" }),
+    ...(cell === "DSQ" && { backgroundColor: "purple", color: "white", fontWeight: "bold" }),
+    ...(cell === "DNS" && { backgroundColor: "gray", color: "white", fontWeight: "bold" }),
+    ...(cell === "25" && { backgroundColor: "gold", color: "black", fontWeight: "bold" }),
+    ...(cell === "18" && { backgroundColor: "#ffcc00", color: "black", fontWeight: "bold" }),
+    ...(cell === "15" && { backgroundColor: "#ff9900", color: "black" }),
+    ...(cell === "12" && { backgroundColor: "#ff6600", color: "black" }),
+    ...(cell === "10" && { backgroundColor: "#ff3300", color: "white" }),
+    ...(cell === "8" && { backgroundColor: "#cc3300", color: "white" }),
+    ...(cell === "6" && { backgroundColor: "#993300", color: "white" }),
+    ...(cell === "4" && { backgroundColor: "#662200", color: "white" }),
+    ...(cell === "2" && { backgroundColor: "#331100", color: "white" }),
+    ...(cell === "1" && { backgroundColor: "#1a0a00", color: "white" }),
+    ...(cell === "0" && { backgroundColor: "dimgray", color: "white" })
+  };
+
+  return (
+    <td key={j} style={{ ...cellStyle, ...cellContentStyle }}>
+      {cell}
+    </td>
+  );
+})}
+
               </tr>
             ))}
           </tbody>
