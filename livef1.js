@@ -58,23 +58,21 @@ function LiveF1Table() {
   return (
     <div>
       <nav>
-        <a href="#1" onClick={() => setActiveSheet(0)}>Driver Points</a> |
-        <a href="#2" onClick={() => setActiveSheet(1)}>Teams Points</a> |
-        <a href="#3" onClick={() => setActiveSheet(2)}>Positions Gained</a> |
-        <a href="#4" onClick={() => setActiveSheet(3)}>All Time Points</a>
+        <a href="#1" onClick={(e) => { e.preventDefault(); setActiveSheet(0); }}>Driver Points</a> |
+        <a href="#2" onClick={(e) => { e.preventDefault(); setActiveSheet(1); }}>Teams Points</a> |
+        <a href="#3" onClick={(e) => { e.preventDefault(); setActiveSheet(2); }}>Positions Gained Championship</a> |
+        <a href="#4" onClick={(e) => { e.preventDefault(); setActiveSheet(3); }}>All Time Points</a>
       </nav>
-
       <table border="1">
         <thead>
           <tr>
-            {sortedData.length > 0 &&
-              Object.keys(sortedData[0]).map((header, i) => (
-                <th key={i}>{header}</th>
-              ))}
+            {sheets[activeSheet] && Object.keys(sheets[activeSheet][0]).map((header, i) => (
+              <th key={i}>{header}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {sortedData.map((row, i) => (
+          {(sheets[activeSheet] || []).map((row, i) => (
             <tr key={i}>
               {Object.entries(row).map(([key, cell], j) => {
                 const driverColor = driverColors[row["Sürücü"]] || { background: "white", text: "black" };
@@ -97,16 +95,13 @@ function LiveF1Table() {
                   };
                 }
 
-                return (
-                  <td key={j} style={cellStyle}>
-                    {cell}
-                  </td>
-                );
+                return <td key={j} style={cellStyle}>{cell}</td>;
               })}
             </tr>
           ))}
         </tbody>
       </table>
+
     </div>
   );
 }
