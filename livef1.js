@@ -47,8 +47,8 @@ function LiveF1Table() {
       "Gabriel Bortoletto": { background: "green", text: "white" }
     };
   
-    const sortedRows = [...rows].sort((a, b) => parseInt(b.Total) - parseInt(a.Total));
 
+    
     // Render navigation links for different sheets
     return (
       <div>
@@ -75,20 +75,10 @@ function LiveF1Table() {
 
   // Hücre değerine göre özel stil belirle
   let cellStyle = {};
-  if (cell === "DNF") cellStyle = { backgroundColor: "black", color: "white", fontWeight: "bold" };
-  else if (cell === "DSQ") cellStyle = { backgroundColor: "purple", color: "white", fontWeight: "bold" };
-  else if (cell === "DNS") cellStyle = { backgroundColor: "gray", color: "white", fontWeight: "bold" };
+  if (cell === "DNF","DNS","DSQ") cellStyle = { backgroundColor: "black", color: "white", fontWeight: "bold" };
   else if (cell === "25") cellStyle = { backgroundColor: "gold", color: "black", fontWeight: "bold" };
-  else if (cell === "18") cellStyle = { backgroundColor: "#ffcc00", color: "black", fontWeight: "bold" };
-  else if (cell === "15") cellStyle = { backgroundColor: "#ff9900", color: "black" };
-  else if (cell === "12") cellStyle = { backgroundColor: "#ff6600", color: "black" };
-  else if (cell === "10") cellStyle = { backgroundColor: "#ff3300", color: "white" };
-  else if (cell === "8")  cellStyle = { backgroundColor: "#cc3300", color: "white" };
-  else if (cell === "6")  cellStyle = { backgroundColor: "#993300", color: "white" };
-  else if (cell === "4")  cellStyle = { backgroundColor: "#662200", color: "white" };
-  else if (cell === "2")  cellStyle = { backgroundColor: "#331100", color: "white" };
-  else if (cell === "1")  cellStyle = { backgroundColor: "#1a0a00", color: "white" };
-  else if (cell === "0")  cellStyle = { backgroundColor: "dimgray", color: "white" };
+  else if (cell === "18") cellStyle = { backgroundColor: "gray", color: "black", fontWeight: "bold" };
+  else if (cell === "15") cellStyle = { backgroundColor: "brown", color: "black" };
 
   // Eğer özel stil yoksa ve bu hücre "Sürücü" ise takım rengini uygula
   if (Object.keys(cellStyle).length === 0 && key === "Sürücü") {
