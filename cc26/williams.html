@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partners | Community Racing Career</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+.featured-card,
+.featured-card:visited{
+  text-decoration:none;
+  color:white;
+}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:
+      radial-gradient(circle at top,
+      #0D63FF 0%,
+      #003B88 30%,
+      #00152D 100%);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size:50px 50px;
+      z-index:-1;
+    }
+
+    .container{
+      width:90%;
+      max-width:1450px;
+      margin:auto;
+    }
+
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:850px;
+    }
+
+    .hero-top{
+      letter-spacing:5px;
+      text-transform:uppercase;
+      opacity:0.7;
+      margin-bottom:25px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    h1{
+      font-family:'Orbitron',sans-serif;
+      font-size:clamp(4rem,10vw,8rem);
+      line-height:0.92;
+      text-transform:uppercase;
+      margin-bottom:35px;
+    }
+
+    .hero-desc{
+      font-size:1.2rem;
+      line-height:1.8;
+      opacity:0.88;
+      max-width:720px;
+    }
+
+    .glow-circle{
+      position:absolute;
+      width:750px;
+      height:750px;
+      border-radius:50%;
+      background:#3c91ff;
+      filter:blur(180px);
+      opacity:0.22;
+      top:-250px;
+      right:-150px;
+      pointer-events:none;
+    }
+
+    .big-word{
+      position:absolute;
+      font-size:12rem;
+      font-family:'Orbitron',sans-serif;
+      font-weight:800;
+      opacity:0.04;
+      pointer-events:none;
+      white-space:nowrap;
+      text-transform:uppercase;
+    }
+
+    .word1{
+      top:10%;
+      left:-5%;
+    }
+
+    .word2{
+      bottom:5%;
+      right:-5%;
+    }
+
+    section{
+      padding:110px 0;
+      position:relative;
+    }
+
+    .section-title{
+      font-family:'Orbitron',sans-serif;
+      font-size:3rem;
+      margin-bottom:55px;
+      text-transform:uppercase;
+    }
+
+    .featured-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .featured-card{
+      position:relative;
+      border-radius:30px;
+      padding:45px;
+      min-height:340px;
+      overflow:hidden;
+
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+
+      backdrop-filter:blur(12px);
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      transition:0.4s ease;
+    }
+
+    .featured-card:hover{
+      transform:translateY(-10px) scale(1.02);
+      border-color:#7bb7ff;
+      box-shadow:0 0 45px rgba(93,164,255,0.35);
+    }
+
+    .featured-card img{
+      width:200px;
+      max-width:100%;
+      object-fit:contain;
+      margin-bottom:30px;
+      transition:0.4s;
+    }
+
+    .featured-card:hover img{
+      transform:scale(1.05);
+    }
+
+    .partner-desc{
+      line-height:1.8;
+      opacity:0.82;
+      font-size:0.98rem;
+    }
+
+    .partners-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:28px;
+    }
+
+    .partner-box{
+      height:185px;
+      border-radius:26px;
+
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(8px);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      transition:0.35s ease;
+
+      position:relative;
+      overflow:hidden;
+
+      padding:20px;
+
+      text-decoration:none;
+    }
+
+    .partner-box:hover{
+      transform:translateY(-8px);
+      border-color:#83bcff;
+      box-shadow:0 0 35px rgba(77,151,255,0.3);
+      background:rgba(255,255,255,0.08);
+    }
+
+    .partner-box img{
+      max-width:150px;
+      max-height:85px;
+      object-fit:contain;
+      opacity:0.92;
+      transition:0.35s ease;
+    }
+
+    .partner-box:hover img{
+      transform:scale(1.06);
+      opacity:1;
+    }
+
+    .partner-box::after{
+      content:'VISIT PARTNER';
+      position:absolute;
+      bottom:18px;
+      font-size:10px;
+      letter-spacing:2px;
+      color:white;
+      opacity:0;
+      transition:0.3s;
+      font-family:'Orbitron',sans-serif;
+    }
+
+    .partner-box:hover::after{
+      opacity:0.55;
+    }
+
+    .cardemir-logo{
+      max-width:210px !important;
+    }
+
+    .tef-logo{
+      max-width:100px !important;
+      max-height:100px !important;
+    }
+
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      margin-top:80px;
+    }
+
+    .category{
+      border-radius:28px;
+      padding:40px;
+
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(8px);
+    }
+
+    .category h3{
+      font-family:'Orbitron',sans-serif;
+      margin-bottom:28px;
+      font-size:1.5rem;
+      text-transform:uppercase;
+    }
+
+    .category ul{
+      list-style:none;
+    }
+
+    .category li{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      opacity:0.85;
+    }
+
+    footer{
+      padding:70px 0;
+      text-align:center;
+      opacity:0.65;
+      font-size:0.95rem;
+    }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:4rem;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+      .big-word{
+        font-size:5rem;
+      }
+
+      .featured-card{
+        min-height:auto;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+
+    <div class="glow-circle"></div>
+
+    <div class="big-word word1">
+      COMMUNITY
+    </div>
+
+    <div class="big-word word2">
+      FUTURE
+    </div>
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="hero-top">
+          EST. 2026 • WORLDWIDE COMMUNITY PARTNERS
+        </div>
+
+        <h1>
+          DRIVING THE<br>
+          FUTURE
+        </h1>
+
+        <p class="hero-desc">
+          A modern motorsport community built around competition,
+          creativity, and the future of racing culture.
+        </p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Major Partners
+      </h2>
+
+      <div class="featured-grid">
+
+        <a href="https://www.blitzsport.com/"
+        class="featured-card"
+        target="_blank">
+
+          <img src="images/blitz.png" alt="BLITZ">
+
+          <p class="partner-desc">
+            Official performance and lifestyle partner supporting
+            the future of community motorsport culture.
+          </p>
+
+        </a>
+
+        <a href="https://www.xbox.com/"
+        class="featured-card"
+        target="_blank">
+
+          <img src="images/xbox.png" alt="XBOX">
+
+          <p class="partner-desc">
+            Powering the gaming ecosystem and connecting racers
+            across competitive platforms worldwide.
+          </p>
+
+        </a>
+
+        <a href="https://ernygen.github.io/cardemir/"
+        class="featured-card"
+        target="_blank">
+
+          <img
+          src="images/cardemir.png"
+          class="cardemir-logo"
+          alt="CARDEMIR">
+
+          <p class="partner-desc">
+            Official software and creative solutions partner
+            of the community.
+          </p>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Official Partners
+      </h2>
+
+      <div class="partners-grid">
+
+        <a href="https://www.blitzsport.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/blitz.png" alt="BLITZ">
+
+        </a>
+
+        <a href="https://www.xbox.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/xbox.png" alt="XBOX">
+
+        </a>
+
+        <a href="https://fanatec.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/fanatec.png" alt="FANATEC">
+
+        </a>
+
+        <a href="https://www.youngla.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/youngla.png" alt="YOUNGLA">
+
+        </a>
+
+        <a href="https://monzo.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/monzo.png" alt="MONZO">
+
+        </a>
+
+        <a href="https://www.boots.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/boots.png" alt="BOOTS">
+
+        </a>
+
+        <a href="https://www.koopmanlogistics.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/koopman.png" alt="KOOPMAN">
+
+        </a>
+
+        <a href="#"
+        class="partner-box"
+        target="_blank">
+
+          <img
+          src="images/tef.png"
+          class="tef-logo"
+          alt="TEF">
+
+        </a>
+
+        <a href="https://ernygen.github.io/cardemir/"
+        class="partner-box"
+        target="_blank">
+
+          <img
+          src="images/cardemir.png"
+          class="cardemir-logo"
+          alt="CARDEMIR">
+
+        </a>
+
+        <a href="https://www.randstad.com/"
+        class="partner-box"
+        target="_blank">
+
+          <img src="images/randstad.png" alt="RANDSTAD">
+
+        </a>
+
+      </div>
+
+      <div class="categories">
+
+        <div class="category">
+
+          <h3>
+            Gaming & Technology
+          </h3>
+
+          <ul>
+            <li>XBOX</li>
+            <li>Fanatec</li>
+            <li>Cardemir Software & Design</li>
+          </ul>
+
+        </div>
+
+        <div class="category">
+
+          <h3>
+            Performance & Lifestyle
+          </h3>
+
+          <ul>
+            <li>BLITZ</li>
+            <li>YoungLA</li>
+            <li>TEF Martial Arts</li>
+          </ul>
+
+        </div>
+
+        <div class="category">
+
+          <h3>
+            Logistics & Finance
+          </h3>
+
+          <ul>
+            <li>Koopman Logistics</li>
+            <li>Monzo Bank</li>
+            <li>Boots</li>
+            <li>Randstad</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Community Racing Career. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
