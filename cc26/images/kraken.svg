@@ -1,10 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="59px" height="47px" viewBox="0 0 59 47" enable-background="new 0 0 59 47" xml:space="preserve">  <image id="image0" width="59" height="47" x="0" y="0"
-    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAvAQAAAAB1GY+TAAAAIGNIUk0AAHomAACAhAAA+gAAAIDo
-AAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAB3YoTpAAAAAlwSFlzAAAAYAAAAGAA8GtCzwAA
-AAd0SU1FB+oFCAw2OjBVhHgAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjYtMDUtMDhUMTI6NTE6MjYr
-MDA6MDBxx4+BAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI2LTA1LTA4VDEyOjUxOjI2KzAwOjAwAJo3
-PQAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNi0wNS0wOFQxMjo1NDo1OCswMDowMOtcr+IAAAAS
-SURBVBjTY/gPAQ8YRhmDmAEA4QNw5wn+MoYAAAAASUVORK5CYII=" />
+<svg viewBox="0 0 59.34 47.03" xmlns="http://www.w3.org/2000/svg" id="Logos">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path d="M23.9,26.61v-6.19h1.04v1.03c.3-.73.83-1.17,1.67-1.17.18,0,.36.04.45.06v1.11c-.09-.02-.3-.06-.5-.06-1.04,0-1.6.83-1.6,2.15v3.06h-1.07Z" class="cls-2"></path>
+  <path d="M29.29,26.79c-1.2,0-2.12-.67-2.12-1.83s.82-1.71,1.78-1.89l1.52-.29c.49-.1.78-.25.78-.73,0-.52-.44-.87-1.3-.87-.78,0-1.42.32-1.48,1.08h-1.13c.02-1.27,1.16-2.03,2.62-2.03,1.68,0,2.36.87,2.36,1.85v3.22c0,.28.13.42.37.42.2,0,.32-.05.43-.12v.88c-.17.14-.45.24-.79.24-.51,0-.92-.28-1.03-.81-.27.38-.84.87-1.99.87ZM28.27,24.93c0,.6.53.91,1.22.91,1.01,0,1.75-.58,1.75-1.44v-1c-.12.14-.51.25-.91.32l-1.01.19c-.72.14-1.05.46-1.05,1.01Z" class="cls-2"></path>
+  <path d="M41.95,26.79c-1.74,0-3.08-1.14-3.08-3.3,0-2.02,1.29-3.24,2.99-3.24,1.93,0,2.99,1.37,2.99,2.92,0,.25-.01.52-.05.71h-4.81c.07,1.2.85,1.95,1.98,1.95.89,0,1.35-.29,1.66-1.01h1.11c-.33,1.25-1.36,1.98-2.79,1.98ZM39.98,22.97h3.73c-.05-1.15-.82-1.78-1.86-1.78-1.1,0-1.78.67-1.87,1.78Z" class="cls-2"></path>
+  <path d="M45.69,26.61v-6.19h1.04v.79c.34-.6,1.07-.97,1.88-.97,1.34,0,2.31.72,2.31,2.58v3.79h-1.07v-3.63c0-1.15-.56-1.72-1.48-1.72-1.04,0-1.62.72-1.62,1.75v3.59h-1.07Z" class="cls-2"></path>
+  <polygon points="17.98 20.42 17.98 26.61 19.04 26.61 19.04 24.6 20.06 23.62 22.18 26.61 23.43 26.61 20.79 22.87 23.29 20.42 21.91 20.42 19.04 23.26 19.04 20.42 17.98 20.42" class="cls-1"></polygon>
+  <polygon points="33.66 20.42 33.66 26.61 34.73 26.61 34.73 24.6 35.75 23.62 37.87 26.61 39.11 26.61 36.47 22.87 38.97 20.42 37.6 20.42 34.73 23.26 34.73 20.42 33.66 20.42" class="cls-1"></polygon>
+  <path d="M12.52,20.24c-2.27,0-4.11,1.87-4.11,4.17v1.79c0,.33.26.59.59.59s.59-.27.59-.59v-1.79c0-.33.26-.6.59-.6s.59.27.59.6v1.79c0,.33.26.59.59.59s.59-.27.59-.59v-1.79c0-.33.26-.6.59-.6s.59.27.59.6v1.79c0,.33.26.59.59.59s.59-.27.59-.59v-1.79c0-.33.26-.6.59-.6s.59.27.59.6v1.79c0,.33.26.59.59.59s.59-.27.59-.59v-1.79c0-2.3-1.84-4.17-4.12-4.17Z" class="cls-2"></path>
 </svg>

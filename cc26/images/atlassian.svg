@@ -1,10 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="59px" height="47px" viewBox="0 0 59 47" enable-background="new 0 0 59 47" xml:space="preserve">  <image id="image0" width="59" height="47" x="0" y="0"
-    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAvAQAAAAB1GY+TAAAAIGNIUk0AAHomAACAhAAA+gAAAIDo
-AAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAAB3YoTpAAAAAlwSFlzAAAAYAAAAGAA8GtCzwAA
-AAd0SU1FB+oFCAw2OjBVhHgAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjYtMDUtMDhUMTI6NTA6NTgr
-MDA6MDDE/5b7AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI2LTA1LTA4VDEyOjUwOjU4KzAwOjAwtaIu
-RwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNi0wNS0wOFQxMjo1NDo1OCswMDowMOtcr+IAAAAS
-SURBVBjTY/gPAQ8YRhmDmAEA4QNw5wn+MoYAAAAASUVORK5CYII=" />
+<svg viewBox="0 0 59.34 47.03" xmlns="http://www.w3.org/2000/svg" id="Logos">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path d="M35.3,24.88c0-.78-.42-1.15-1.59-1.41-.65-.14-.81-.29-.81-.49,0-.25.23-.37.66-.37.52,0,1.03.16,1.51.38v-1.03c-.34-.17-.86-.3-1.48-.3-1.16,0-1.76.5-1.76,1.33,0,.66.3,1.18,1.5,1.41.72.15.86.26.86.5s-.15.38-.66.38c-.58,0-1.28-.2-1.74-.47v1.08c.36.18.84.38,1.73.38,1.27,0,1.76-.56,1.76-1.39Z" class="cls-1"></path>
+  <path d="M47.95,21.72v4.48h.95v-3.42l.4.91,1.35,2.51h1.2v-4.48h-.95v2.89l-.36-.84-1.09-2.06h-1.5Z" class="cls-1"></path>
+  <path d="M41.89,21.72h-1.04v4.47h1.04v-4.47Z" class="cls-1"></path>
+  <path d="M39.64,24.88c0-.78-.42-1.15-1.59-1.41-.65-.14-.81-.29-.81-.49,0-.25.23-.37.66-.37.52,0,1.03.16,1.51.38v-1.03c-.34-.17-.86-.3-1.48-.3-1.16,0-1.76.5-1.76,1.33,0,.66.3,1.18,1.5,1.41.72.15.86.26.86.5s-.15.38-.66.38c-.58,0-1.28-.2-1.73-.47v1.08c.36.18.84.38,1.73.38,1.27,0,1.76-.56,1.76-1.39Z" class="cls-1"></path>
+  <path d="M23.75,21.72v4.48h2.15l.34-.97h-1.43v-3.51h-1.05Z" class="cls-1"></path>
+  <path d="M19.52,21.72v.97h1.15v3.51h1.05v-3.51h1.24v-.97h-3.45Z" class="cls-1"></path>
+  <path d="M18,21.72h-1.37l-1.56,4.47h1.19l.22-.76c.26.07.54.12.84.12s.57-.04.84-.12l.22.76h1.19l-1.57-4.47ZM17.31,24.64c-.2,0-.39-.03-.58-.08l.58-1.96.58,1.96c-.18.05-.38.08-.58.08Z" class="cls-1"></path>
+  <path d="M29.59,21.72h-1.37l-1.56,4.47h1.19l.22-.76c.26.07.54.12.84.12s.57-.04.84-.12l.22.76h1.19l-1.57-4.47ZM28.9,24.64c-.2,0-.39-.03-.58-.08l.58-1.96.58,1.96c-.19.05-.38.08-.58.08Z" class="cls-1"></path>
+  <path d="M45.64,21.72h-1.37l-1.56,4.47h1.19l.22-.76c.26.07.54.12.84.12s.57-.04.84-.12l.22.76h1.19l-1.57-4.47ZM44.95,24.64c-.2,0-.39-.03-.58-.08l.58-1.96.58,1.96c-.18.05-.37.08-.58.08Z" class="cls-1"></path>
+  <path d="M9.05,23.3s-.07-.05-.12-.05c-.03,0-.07.03-.08.07l-1.36,2.71c-.03.06,0,.13.05.16.02,0,.03.02.05.02h1.89s.09-.02.11-.07c.4-.82.16-2.1-.54-2.84Z" class="cls-1"></path>
+  <path d="M12.92,26.03s-2.54-5.08-2.61-5.2c-.02-.04-.05-.07-.09-.07h0s-.08.02-.11.07c-.68,1.08-.76,2.38-.21,3.49l.91,1.82s.06.07.11.07h1.89c.07,0,.12-.05.12-.12,0-.02,0-.03,0-.05Z" class="cls-1"></path>
 </svg>
