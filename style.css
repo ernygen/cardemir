@@ -1,109 +1,171 @@
 /* Genel Stil */
 body {
     margin: 0;
-    padding: 0;
-    background: black;
-    color: white;
-    font-family: Bahnschrift, sans-serif;
-    text-align: center;
+    padding: 40px 0;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Bahnschrift', sans-serif;
     background-image: url('images/Adsız.png');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    overflow: auto; /* Scrollbar aktif olsun */
+    min-height: 100vh;
+    box-sizing: border-box;
 }
-/* Logo */
-.logo {
-    max-width: 400px;
-    border-radius: 10px;
-}
-/* İçerik */
+
+/* İçerik Konteyneri */
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-top: 20px; /* Üstten biraz boşluk ekleyelim */
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Hakkımda Kısmı */
-.about {
-    max-width: 400px;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-    text-align: center;
-    margin: 20px 0;
+/* Logo */
+.logo-container {
+    margin-bottom: 20px;
 }
 
-/* Çalışmalar (Works) */
-.works-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
+.logo {
+    max-width: 100%;
+    height: auto;
+    width: 280px;
+    transition: transform 0.3s ease;
 }
 
-.works-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 800px;
-}
-
-.work-item {
-    position: relative;
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.work-item img {
-    width: 150px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.work-item:hover img {
-    transform: scale(5) translateY(-60px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Çalışma Açıklamaları */
-.work-item p {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.eren{
-    color: red;
-}
-
-.aygen{
-    color: green;
+.logo:hover {
+    transform: scale(1.03);
 }
 
 /* Sosyal Medya İkonları */
 .socials {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .socials a img {
-    width: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .socials a img:hover {
-    transform: scale(1.2);
+    transform: translateY(-3px) scale(1.1);
+    opacity: 1;
 }
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+/* Proje Kartları Bölümü */
+.works-section {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.works-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Tıklanabilir Proje Kartı */
+.work-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    margin-right: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Renk Sınıfları */
+.eren { color: #ff3b30; }
+.aygen { color: #34c759; }
+
+.project-logo {
+    width: 32px;      /* Kart emojileriyle benzer boyuta getirmek için */
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px; /* İsteğe bağlı yuvarlatma */
+}
+/* Logo içeren card-icon alanları için beyaz arka plan */
+.card-icon.logo-bg-white {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Eğer ikon alanların daireselse yuvarlar, kareyse kaldırabilirsin */
+    padding: 4px;       /* Logonun kenarlara sıfırlanmaması için hafif boşluk */
+    width: 40px;        /* Mevcut ikon boyutlarına göre ayarlayabilirsin */
+    height: 40px;
+}
+
+/* Logoların taşmasını önlemek için */
+.project-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

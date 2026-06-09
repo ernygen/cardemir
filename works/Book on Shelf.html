@@ -1,55 +1,114 @@
 <!DOCTYPE html>
-<!-- saved from url=(0031)http://localhost/Book_on_Shelf/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book on Shelf</title>
-    <link rel="icon" href="http://localhost/Book_on_Shelf/css/logo.svg" type="image/x-icon">
+    <title>Book on Shelf | Portfolio Case</title>
+    <link rel="icon" href="../images/3.svg" type="image/x-icon">
     <link rel="stylesheet" href="./Book on Shelf_files/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="./Book on Shelf_files/css2" rel="stylesheet">
     <link rel="stylesheet" href="./Book on Shelf_files/all.min.css">
+
+    <style>
+        .datetime-widget {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: auto;
+            min-width: 240px;
+            height: 37px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bahnschrift', sans-serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0 15px;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+    </style>
 </head>
 
-<body cz-shortcut-listen="true">
-<div class="column left"></div>
-<iframe src="./Book on Shelf_files/tb4.html" width="204" height="37"></iframe>  <!--Clock-->
+<body>
+
+<div class="datetime-widget" id="dateTimeWidget">00-00-0000 | 00:00:00</div>
 
 <div class="auth-buttons">
-    
-        <a href="http://localhost/Book_on_Shelf/inc/login.inc.php" class="button">Login</a>
-        <a href="http://localhost/Book_on_Shelf/inc/register.inc.php" class="button">Register</a>
-    </div>
-
+    <a href="#" class="button" onclick="event.preventDefault();">Login</a>
+    <a href="#" class="button" onclick="event.preventDefault();">Register</a>
+</div>
 
 <div class="content">
-    <h1><a class="header" href="http://localhost/Book_on_Shelf/index.php?page=home">Book on Shelf</a></h1>
+    <h1><a class="header" href="#" onclick="event.preventDefault();">Book on Shelf</a></h1>
 
-<div class="topnav">
-    
-                <a href="http://localhost/index.php?page=overzicht">Overzicht (Admin)</a>
-                <a href="http://localhost/index.php?page=overzicht_g">Leen Boek</a>
-                <a href="http://localhost/index.php?page=b_bewerken">Bewerken</a>
-                <a href="http://localhost/index.php?page=b_toevoegen">Toevoegen</a>
-                <a href="http://localhost/index.php?page=m_geleende">Geleende Boeken</a>
-                <a href="http://localhost/index.php?page=m_gereserveerde_b">Gereserveerde Boeken</a>
-                <a href="http://localhost/PHP/logout.php">Uitloggen</a>
-            </div>
-  <!-- Connection -->
+    <div class="topnav">
+        <a href="#" onclick="event.preventDefault();">Overzicht (Admin)</a>
+        <a href="#" onclick="event.preventDefault();">Leen Boek</a>
+        <a href="#" onclick="event.preventDefault();">Bewerken</a>
+        <a href="#" onclick="event.preventDefault();">Toevoegen</a>
+        <a href="#" onclick="event.preventDefault();">Geleende Boeken</a>
+        <a href="#" onclick="event.preventDefault();">Gereserveerde Boeken</a>
+        <a href="#" onclick="event.preventDefault();" style="color: #ff3b30;">Uitloggen</a>
+    </div>
 
     <div class="shelf">
-        <h2>Popular Boeken</h2>
+        <h2>Populaire Boeken</h2>
         <div class="books">
-            <div class="book"><img src="./Book on Shelf_files/anne_frank.jpg" alt=""><span class="book-title">Buiten is het Oorlog</span></div><div class="book"><img src="./Book on Shelf_files/sinterklaas.jpeg" alt=""><span class="book-title">Buiten is het Oorlog</span></div><div class="book"><img src="./Book on Shelf_files/intermezzo.jpeg" alt=""><span class="book-title">Intermezzo</span></div><div class="book"><img src="./Book on Shelf_files/dubbel.jpeg" alt=""><span class="book-title">Dubbelspel </span></div><div class="book"><img src="./Book on Shelf_files/paris.jpeg" alt=""><span class="book-title">Paris</span></div>        </div>
-    </div> <!--Popular Boeken Shelf-->
-
- <!--Content-->
+            <div class="book">
+                <img src="./Book on Shelf_files/anne_frank.jpg" alt="Buiten is het Oorlog">
+                <span class="book-title">Buiten is het Oorlog</span>
+            </div>
+            <div class="book">
+                <img src="./Book on Shelf_files/sinterklaas.jpeg" alt="Buiten is het Oorlog">
+                <span class="book-title">Buiten is het Oorlog</span>
+            </div>
+            <div class="book">
+                <img src="./Book on Shelf_files/intermezzo.jpeg" alt="Intermezzo">
+                <span class="book-title">Intermezzo</span>
+            </div>
+            <div class="book">
+                <img src="./Book on Shelf_files/dubbel.jpeg" alt="Dubbelspel">
+                <span class="book-title">Dubbelspel</span>
+            </div>
+            <div class="book">
+                <img src="./Book on Shelf_files/paris.jpeg" alt="Paris">
+                <span class="book-title">Paris</span>
+            </div>
+        </div>
+    </div>
 
 </div>
 
-<div class="column right"></div>
+<script>
+    function updateDateTime() {
+        const now = new Date();
 
+        // Tarih Formatlama (GG-AA-YYYY)
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
 
-</body></html>
+        // Saat Formatlama (HH:MM:SS)
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        // Ekrana Yazdırma
+        document.getElementById('dateTimeWidget').textContent = `${day}-${month}-${year} | ${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+</body>
+</html>
