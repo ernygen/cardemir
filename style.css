@@ -78,6 +78,7 @@ body {
     margin-top: 10px;
 }
 
+
 .section-title {
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -87,6 +88,37 @@ body {
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 8px;
+}
+
+.works-grid-holder {
+    max-width: 1600px;
+    margin: 0;
+    padding: 0px;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+}
+
+.about-body .works-grid-holder {
+    margin: auto;
+}
+
+.about-body {
+    margin: 0;
+    padding: 40px 0;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Bahnschrift', sans-serif;
+    background-image: url(images/Adsız.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .works-grid {
@@ -100,6 +132,7 @@ body {
 .work-card {
     display: flex;
     align-items: center;
+    flex-direction: column-reverse;
     padding: 16px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -107,6 +140,10 @@ body {
     text-decoration: none;
     color: #ffffff;
     transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card img {
+    width: 90% !important;
 }
 
 .work-card:hover {
@@ -142,24 +179,35 @@ body {
 }
 
 /* Renk Sınıfları */
-.eren { color: #ff3b30; }
-.aygen { color: #34c759; }
+.eren {
+    color: #ff3b30;
+}
+
+.aygen {
+    color: #34c759;
+}
 
 .project-logo {
-    width: 32px;      /* Kart emojileriyle benzer boyuta getirmek için */
+    width: 32px;
+    /* Kart emojileriyle benzer boyuta getirmek için */
     height: 32px;
     object-fit: contain;
-    border-radius: 4px; /* İsteğe bağlı yuvarlatma */
+    border-radius: 4px;
+    /* İsteğe bağlı yuvarlatma */
 }
+
 /* Logo içeren card-icon alanları için beyaz arka plan */
 .card-icon.logo-bg-white {
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* Eğer ikon alanların daireselse yuvarlar, kareyse kaldırabilirsin */
-    padding: 4px;       /* Logonun kenarlara sıfırlanmaması için hafif boşluk */
-    width: 40px;        /* Mevcut ikon boyutlarına göre ayarlayabilirsin */
+    border-radius: 50%;
+    /* Eğer ikon alanların daireselse yuvarlar, kareyse kaldırabilirsin */
+    padding: 4px;
+    /* Logonun kenarlara sıfırlanmaması için hafif boşluk */
+    width: 40px;
+    /* Mevcut ikon boyutlarına göre ayarlayabilirsin */
     height: 40px;
 }
 
