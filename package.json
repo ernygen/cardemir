@@ -1,0 +1,15 @@
+{
+  "name": "cardemir",
+  "version": "1.0.0",
+  "description": "Personal Space",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asciify-engine": "^4.32.9"
+  }
+}
