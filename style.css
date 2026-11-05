@@ -5,11 +5,7 @@ body {
     background: #0a0a0a;
     color: #ffffff;
     font-family: 'Bahnschrift', sans-serif;
-    background-image: url('images/Adsız.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* Fallback background color for hero Asciify canvas */
 
     display: flex;
     justify-content: center;

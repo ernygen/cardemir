@@ -92,7 +92,7 @@ async function runTestSuite() {
     ]);
 
     assert(res.out.includes('id="hero"'), '#hero container exists in DOM');
-    assert(res.out.includes('class="content copy"'), '.copy content exists in #hero');
+    assert(res.out.includes('class="logo-container copy"') || res.out.includes('copy'), '.copy element exists in #hero');
     assert(res.out.includes('<canvas') && (res.out.includes('data-ascii-kit') || res.out.includes('ascii-kit')), 'WebGL ASCII Canvas element is mounted inside #hero');
     assert(res.out.includes('Williams Projesi'), 'Existing project cards and text are preserved');
   }

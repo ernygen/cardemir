@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "asciify-engine": "^4.32.9"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }
