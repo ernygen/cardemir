@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'RO Sans Heading';
+    src: url('rijksoverheidfonts-master/rijksoverheidsansheading-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RO Sans Text';
+    src: url('rijksoverheidfonts-master/rijksoverheidsanstext-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --ro-lintblauw: #154273;
+    --ro-donkerblauw: #01689b;
+    --ro-hemelblauw: #007bc7;
+    --ro-lichtblauw: #8fcae7;
+    --ro-geel: #f9e11e;
+    --ro-rood: #d52b1e;
+    --ro-groen: #39870c;
+    --ro-grijs-1: #f3f3f3;
+    --ro-grijs-2: #e6e6e6;
+    --ro-grijs-3: #cccccc;
+    --ro-grijs-7: #535353;
+    --font-text: 'RO Sans Text', Verdana, Arial, sans-serif;
+    --font-heading: 'RO Sans Heading', Verdana, Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: #ffffff;
+    color: var(--ro-lintblauw);
+    font-family: var(--font-text);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+*:focus {
+    outline: 2px dotted #000000;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+h1, h2, h3, h4 {
+    color: var(--ro-donkerblauw);
+    font-family: var(--font-heading);
+    font-weight: normal;
+    margin-top: 0;
+}
+
+/* === Buttons (normal) === */
+.btn {
+    display: inline-block;
+    background-color: var(--ro-lintblauw);
+    color: #ffffff;
+    padding: 10px 16px;
+    min-height: 48px;
+    font-family: var(--font-text);
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid var(--ro-lintblauw);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn:hover {
+    background-color: #0d2f4f;
+    border-color: #0d2f4f;
+}
+.btn-secondary {
+    background-color: transparent;
+    color: var(--ro-lintblauw);
+}
+.btn-secondary:hover { background-color: var(--ro-lichtblauw); }
+.btn-actie {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 18px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    min-width: 115px;
+    text-align: center;
+    color: #fff;
+    transition: filter 0.15s;
+}
+.btn-actie:hover { filter: brightness(0.92); }
+.btn-bewerken { background: #5f5f5f; }
+.btn-bewerken:hover { background: #4a4a4a; color:#fff; }
+.btn-verwijderen { background: #e53935; }
+.btn-verwijderen:hover { background: #c62828; color:#fff; }
+.btn-actie.is-disabled { opacity:0.95; cursor: default; pointer-events: none; }
+.btn.is-disabled { opacity:0.6; cursor: default; pointer-events: none; }
+.btn-partij-toevoegen {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    min-height: auto;
+    border-radius: 4px;
+}
+.btn-full { width:100%; margin-top:20px; font-size:1.1rem; }
+
+/* === Forms (normal) === */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+}
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 0;
+    border-top: 4px solid var(--ro-hemelblauw);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+}
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--ro-donkerblauw);
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--ro-grijs-3);
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: var(--font-text);
+    box-sizing: border-box;
+}
+.login-submit {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.container-narrow { max-width: 600px; }
+.container-wide { max-width: 1150px; }
+.form-actions-row { display:flex; gap:12px; margin-top:20px; }
+.btn-inline-flex { display:inline-flex; align-items:center; }
+.text-muted { color:#888; font-style: italic; }
+.btn-sm-reset { font-size:0.85rem; min-height:auto; padding:8px 12px; }
+.text-small-muted { font-size:0.85rem; color:#666; }
+.section-mt { margin-top:40px; }
+.row-bordered { border-bottom:1px solid #eee; }
+
+/* === Alerts (normal) === */
+.alert {
+    padding: 15px 20px;
+    border-radius: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-left: 5px solid;
+}
+.alert-info {
+    background-color: var(--ro-lichtblauw);
+    color: var(--ro-donkerblauw);
+    border-color: var(--ro-hemelblauw);
+}
+.alert-success {
+    background-color: #e6f4e8;
+    color: var(--ro-groen);
+    border-color: var(--ro-groen);
+}
+.alert-danger {
+    background-color: #fbeae9;
+    color: var(--ro-rood);
+    border-color: var(--ro-rood);
+}
+.alert-spaced { margin-bottom: 20px; }
+.toast {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffffff;
+    color: #1b3a23;
+    border: 1px solid #c8e6c9;
+    border-left: 6px solid var(--ro-groen);
+    padding: 16px 18px 16px 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 9999;
+    min-width: 340px;
+    max-width: 92vw;
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: auto;
+    animation: toastIn 0.45s cubic-bezier(0.22,1,0.36,1) forwards, toastOut 0.4s ease 4s forwards;
+}
+.toast-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--ro-groen);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.toast-body { flex: 1; line-height: 1.35; }
+.toast-body strong { display:block; font-size:0.95rem; }
+.toast-body span { font-weight: normal; color: #2e5935; font-size:0.9rem; }
+.toast-close {
+    background: none;
+    border: none;
+    color: #5a5a5a;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 4px;
+}
+.toast-close:hover { color: #000; }
+@keyframes toastIn {
+    from { opacity:0; transform: translateX(-50%) translateY(-18px); }
+    to { opacity:1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes toastOut {
+    to { opacity:0; transform: translateX(-50%) translateY(-12px); pointer-events:none; }
+}

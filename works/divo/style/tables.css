@@ -1,0 +1,55 @@
+.table-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 0;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    text-align: left;
+}
+thead {
+    background-color: var(--ro-lichtblauw);
+    border-bottom: 2px solid var(--ro-hemelblauw);
+}
+th {
+    color: var(--ro-donkerblauw);
+    padding: 12px 15px;
+    font-weight: bold;
+}
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--ro-grijs-2);
+}
+tr:hover { background-color: var(--ro-grijs-1); }
+.tbl tr:hover { background: transparent; }
+.tbl tbody tr:hover { background: transparent; }
+.table-responsive { overflow-x:auto; }
+.tbl { width:100%; border-collapse:collapse; }
+.tbl th {
+    text-align:center;
+    vertical-align:middle;
+    font-family: var(--font-heading);
+    font-weight:normal;
+    font-size:1.02rem;
+    color:#1a1a1a;
+    padding:12px 8px;
+    border-bottom:1px solid #e6e6e6;
+    white-space:nowrap;
+}
+.tbl td {
+    padding:10px 8px;
+    vertical-align:middle;
+    border-bottom:1px solid #f0f0f0;
+    font-size:0.95rem;
+    text-align:center;
+}
+.tbl-partijen th:last-child, .tbl-partijen td:last-child { min-width:240px; }
+.tbl-kandidaten th:last-child, .tbl-kandidaten td:last-child { min-width:210px; }
+.tbl-partijen th:nth-child(3), .tbl-partijen td:nth-child(3) { text-align:left; }
+.tbl-kandidaten th:nth-child(2), .tbl-kandidaten td:nth-child(2),
+.tbl-kandidaten th:nth-child(3), .tbl-kandidaten td:nth-child(3) { text-align:left; }
+.partijen-header-row, .partij-row { display:none; }

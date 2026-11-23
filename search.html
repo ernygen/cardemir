@@ -3,25 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Cardemir | Search</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/Men.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/3.svg" type="image/svg+xml">
 </head>
-<body>
+<body class="search-page">
 
-<!-- Logo ve Sosyal Medya -->
-<div class="content">
-    <img src="images/cardemir.png" alt="Logo" class="logo">
-    <div class="search-container">
-        <h1>Google'da Ara</h1>
-        <form action="https://www.google.com/search" method="GET">
-            <input type="text" name="q" placeholder="Ara...">
-        </form>
+<header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="index.html#projects" data-i18n="nav.works">Projects</a>
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
+        <button type="button" data-lang="nl">NL</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="tr">TR</button>
     </div>
+</header>
+
+<div id="hero" class="hero-wrapper">
+    <main class="content copy">
+        <a href="index.html" class="logo-link" aria-label="Cardemir — Home">
+            <svg class="ascii-logo" viewBox="0 0 570 90" role="img" aria-label="Cardemir" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6 5h6v5h-6zM12 0h48v10h-48zM84 5h6v5h-6zM90 0h48v10h-48zM162 5h6v5h-6zM168 0h48v10h-48zM222 0h48v10h-48zM270 5h6v5h-6zM306 5h6v5h-6zM312 0h48v10h-48zM378 5h24v5h-24zM402 0h18v10h-18zM420 5h24v5h-24zM468 5h6v5h-6zM474 0h6v10h-6zM510 5h6v5h-6zM516 0h48v10h-48zM0 10h18v10h-18zM42 10h18v10h-18zM78 10h18v10h-18zM120 10h18v10h-18zM156 10h18v10h-18zM198 10h18v10h-18zM222 10h18v10h-18zM258 10h6v5h-6zM264 10h18v10h-18zM300 10h18v10h-18zM342 10h18v10h-18zM366 15h6v5h-6zM372 10h12v10h-12zM384 10h18v5h-18zM402 10h18v10h-18zM420 10h18v5h-18zM438 10h12v10h-12zM450 15h6v5h-6zM462 10h18v10h-18zM504 10h18v10h-18zM546 10h18v10h-18zM0 20h18v10h-18zM42 20h6v10h-6zM48 20h6v5h-6zM78 20h18v10h-18zM120 20h18v10h-18zM156 20h18v10h-18zM198 20h18v10h-18zM222 20h18v10h-18zM264 20h18v10h-18zM300 20h18v10h-18zM342 20h6v10h-6zM348 20h6v5h-6zM366 20h18v10h-18zM402 20h18v10h-18zM438 20h18v10h-18zM462 20h18v10h-18zM480 20h3v10h-3zM504 20h18v10h-18zM546 20h18v10h-18zM0 30h18v10h-18zM78 30h18v10h-18zM120 30h18v10h-18zM150 35h6v5h-6zM156 30h18v10h-18zM174 35h24v5h-24zM198 30h12v10h-12zM210 30h6v5h-6zM222 30h18v10h-18zM264 30h18v10h-18zM294 35h6v5h-6zM300 30h18v10h-18zM318 35h18v5h-18zM366 30h18v10h-18zM402 30h18v10h-18zM438 30h18v10h-18zM462 30h18v10h-18zM480 30h3v10h-3zM498 35h6v5h-6zM504 30h18v10h-18zM522 35h24v5h-24zM546 30h12v10h-12zM558 30h6v5h-6zM0 40h18v10h-18zM66 40h6v5h-6zM72 40h66v10h-66zM144 40h12v5h-12zM156 40h18v10h-18zM174 40h30v5h-30zM222 40h18v10h-18zM264 40h18v10h-18zM288 40h12v5h-12zM300 40h18v10h-18zM318 40h18v5h-18zM366 40h18v10h-18zM402 40h18v10h-18zM438 40h18v10h-18zM462 40h18v10h-18zM480 40h3v10h-3zM492 40h12v5h-12zM504 40h18v10h-18zM522 40h30v5h-30zM0 50h18v10h-18zM42 50h6v10h-6zM48 55h6v5h-6zM78 50h18v10h-18zM120 50h18v10h-18zM144 50h6v5h-6zM150 50h66v10h-66zM222 50h18v10h-18zM264 50h18v10h-18zM300 50h18v10h-18zM342 50h6v10h-6zM348 55h6v5h-6zM366 50h18v10h-18zM402 50h18v10h-18zM438 50h18v10h-18zM462 50h18v10h-18zM492 50h6v5h-6zM498 50h66v10h-66zM0 60h18v10h-18zM42 60h18v10h-18zM78 60h18v10h-18zM120 60h18v10h-18zM156 60h18v10h-18zM198 60h18v10h-18zM222 60h18v10h-18zM258 65h6v5h-6zM264 60h18v10h-18zM300 60h18v10h-18zM342 60h18v10h-18zM366 60h18v10h-18zM402 60h18v10h-18zM438 60h18v10h-18zM462 60h18v10h-18zM504 60h18v10h-18zM546 60h18v10h-18zM0 70h48v10h-48zM48 70h6v5h-6zM78 70h18v10h-18zM120 70h6v10h-6zM126 70h6v5h-6zM156 70h18v10h-18zM198 70h18v10h-18zM222 70h48v10h-48zM270 70h6v5h-6zM300 70h60v10h-60zM372 70h6v5h-6zM378 70h6v10h-6zM402 70h18v10h-18zM438 70h6v10h-6zM444 70h6v5h-6zM462 70h6v10h-6zM468 70h6v5h-6zM504 70h18v10h-18zM546 70h18v10h-18zM156 80h18v10h-18zM198 80h18v10h-18zM504 80h18v10h-18zM546 80h18v10h-18z"/></svg>
+        </a>
+
+        <p class="search-clock" id="clock" aria-live="off"></p>
+
+        <form class="search-form" action="https://www.google.com/search" method="GET" role="search">
+            <label for="q" class="visually-hidden" data-i18n="search.label">Search Google</label>
+            <input id="q" type="search" name="q" placeholder="Search Google…" autocomplete="off" autofocus data-i18n-attr="placeholder:search.placeholder">
+            <button type="submit" aria-label="Search" data-i18n-attr="aria-label:search.label"><i class="bi bi-search" aria-hidden="true"></i></button>
+        </form>
+        <p class="search-hint" data-i18n-html="search.hint">Press <kbd>/</kbd> to focus</p>
+
+        <nav class="socials" aria-label="Shortcuts">
+            <a href="https://github.com/ernygen" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+            <a href="https://x.com/erencardemir" aria-label="Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/ernygen" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://open.spotify.com/user/1rtrunyyanqgomddvktdjwg2c" aria-label="Spotify"><i class="bi bi-spotify" aria-hidden="true"></i></a>
+            <a href="https://www.reddit.com/user/ErnYgen/" aria-label="Reddit"><i class="bi bi-reddit" aria-hidden="true"></i></a>
+            <a href="https://steamcommunity.com/id/ernygen/" aria-label="Steam"><i class="bi bi-steam" aria-hidden="true"></i></a>
+            <a href="https://ernygen.itch.io/" aria-label="Itch.io"><i class="bi bi-controller" aria-hidden="true"></i></a>
+        </nav>
+    </main>
 </div>
 
-<footer style="">
-
-</footer>
+<script src="site.js"></script>
+<script>
+    const clock = document.getElementById('clock');
+    const locale = () => ({ nl: 'nl-NL', en: 'en-GB', tr: 'tr-TR' })[document.documentElement.lang] || 'en-GB';
+    const tick = () => {
+        const now = new Date(), hr = now.getHours();
+        const greet = t(hr < 6 ? 'search.night' : hr < 12 ? 'search.morning' : hr < 18 ? 'search.afternoon' : 'search.evening');
+        clock.textContent = `${greet} · ${now.toLocaleTimeString(locale(), { hour: '2-digit', minute: '2-digit' })} · ${now.toLocaleDateString(locale(), { weekday: 'long', day: 'numeric', month: 'long' })}`;
+    };
+    tick();
+    setInterval(tick, 10000);
+    document.addEventListener('langchange', tick);
+    const q = document.getElementById('q');
+    document.addEventListener('keydown', e => {
+        if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    });
+</script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+/* Alleen de stemmen-seeder gebruikt deze opmaak. */
+.stemmen-seeder .partijbeheer-container { max-width: 1100px; }
+.stemmen-seeder h1 { margin-bottom: 16px; }
+.stemmen-seeder p { margin: 0 0 14px; line-height: 1.6; }
+.seeder-random {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background: #eef6fb;
+    border-left: 4px solid #007bc7;
+}
+.seeder-random label { font-weight: bold; }
+.seeder-random #randomMax { width: 110px; }
+.seeder-random .seeder-regel { font-size: 0.85rem; color: #555; }
+.stemmen-seeder .seeder-status {
+    margin: 24px 0;
+    padding: 16px 20px;
+    background: #eef6fb;
+    border-left: 4px solid #007bc7;
+}
+.stemmen-seeder .table-responsive {
+    margin-bottom: 20px;
+    border: 1px solid #d8e0e5;
+}
+.stemmen-seeder table { margin: 0; table-layout: fixed; min-width: 600px; }
+.stemmen-seeder thead th:first-child { width: 40%; }
+.stemmen-seeder th, .stemmen-seeder td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #d8e0e5;
+    vertical-align: middle;
+}
+.stemmen-seeder thead th:not(:first-child) { text-align: center; }
+.stemmen-seeder tbody th { font-size: 1rem; font-weight: normal; }
+.stemmen-seeder tbody tr:last-child th,
+.stemmen-seeder tbody tr:last-child td { border-bottom: 0; }
+.stemmen-seeder .seeder-blanco { background: #eef6fb; }
+.stemmen-seeder input[type="number"] {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 10px 12px;
+    text-align: right;
+    border: 1px solid #aab7c2;
+    background: #fff;
+}
+.stemmen-seeder input:focus-visible,
+.stemmen-seeder button:focus-visible { outline: 3px solid #007bc7; outline-offset: 3px; }
+.stemmen-seeder input:disabled { background: #f0f0f0; cursor: not-allowed; }
+.stemmen-seeder .seeder-verwijderen {
+    margin-top: 40px;
+    padding: 24px;
+    border: 1px solid #e4c8c8;
+    border-left: 4px solid #b32d29;
+    background: #fffafa;
+}
+.stemmen-seeder .seeder-verwijderen h2 { margin: 0 0 12px; }
+.stemmen-seeder .seeder-bevestiging {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    line-height: 1.5;
+    cursor: pointer;
+}
+/* De checkbox mag niet de volle breedte van een tekstveld krijgen. */
+.stemmen-seeder input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-height: 0;
+    flex: 0 0 18px;
+    margin: 3px 0 0;
+    padding: 0;
+    accent-color: #b32d29;
+}
+.stemmen-seeder .seeder-verwijderknop { background: #b32d29; }
+.stemmen-seeder .seeder-verwijderknop:hover { background: #8f2421; }
+@media (max-width: 640px) {
+    .stemmen-seeder .seeder-verwijderen { padding: 18px; }
+    .stemmen-seeder .btn { width: 100%; white-space: normal; }
+}

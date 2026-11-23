@@ -1,0 +1,3342 @@
+/* --- ALGEMENE STIJLEN & VARIABELEN --- */
+:root {
+    /* POKEMON KLEURENPALET */
+    --poke-blue: #dc2626;
+    --poke-darkblue: #000000;
+    --poke-red: #dc2626;
+    --poke-yellow: #fbbf24;
+
+    /* STANDAARD KLEUREN */
+    --green: --poke-yellow;
+    --background: linear-gradient(to right, #7c0000, #000000);
+    --muted: #d1d5db;
+    --text: #ffffff;
+    --bg-primary: var(--poke-red);
+    --bg-secondary: var(--poke-darkblue);
+    --bg-light: #1f1f1f;
+    --bg-dark: #000000;
+    --bg-white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", "Inter", sans-serif;
+    margin: 0;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background: var(--bg-dark);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 60px;
+    border-bottom: 4px solid var(--poke-yellow);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #f3f4f6;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--poke-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.logo {
+    margin-left: 30px;
+    width: auto;
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--poke-yellow);
+}
+
+/* --- NAVBAR LOGO LINK --- */
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.1);
+}
+
+/* --- PROFILE BUTTON VARIATIONS --- */
+.profile-btn.login-btn {
+    background-color: var(--green);
+}
+
+/* --- SIDEBAR USER INFO --- */
+.sidebar-user-info {
+    padding: 0 25px 20px 25px;
+    color: #6b7280;
+    font-size: 14px;
+    border-bottom: 1px solid #374151;
+    margin-bottom: 10px;
+}
+
+.sidebar-user-info strong {
+    color: var(--poke-yellow);
+}
+
+/* --- SIDEBAR LOGOUT LINK --- */
+.sidebar a.logout-link {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* --- HERO SECTIE --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero.gradient-bg {
+    background: var(--background);
+    color: white;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    z-index: 1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: var(--poke-yellow);
+}
+
+.hero-text p {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* --- CARD IMAGE --- */
+.card-image {
+    max-width: 300px;
+    height: auto;
+    opacity: 1;
+}
+
+/* --- VEILINGEN SECTION --- */
+.veilingen-section {
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* --- CTA KNOPPEN --- */
+.cta-btn {
+    display: inline-block;
+    background: var(--poke-red);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    border: 2px solid white;
+}
+
+.cta-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.cta-btn.blue {
+    background: var(--poke-blue);
+    box-shadow: 0 4px 15px rgba(59, 76, 202, 0.3);
+}
+
+.cta-btn.blue:hover {
+    background: var(--poke-darkblue);
+}
+
+.cta-btn.edit {
+    background: var(--poke-blue);
+    border: none;
+}
+
+.cta-btn.delete {
+    background: var(--poke-red);
+    border: none;
+}
+
+.cta-btn.cancel {
+    background: var(--muted);
+    border: none;
+}
+
+.cta-btn1 {
+    display: inline-block;
+    background: var(--background);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(59, 76, 202, 0.4);
+    margin: 40px auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.cta-btn1:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 76, 202, 0.6);
+}
+
+/* --- STATISTIEKEN SECTIE --- */
+.stats-section {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 80px 40px;
+    color: var(--text);
+}
+
+.stats-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.stat-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--poke-yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box:hover::after {
+    transform: scaleX(1);
+}
+
+.stat-box .text-3xl {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--poke-yellow);
+    margin-bottom: 8px;
+}
+
+.stat-box .text-sm {
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* --- OVER ONS SECTIE --- */
+.about-section {
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.about-img:hover {
+    transform: rotate(-2deg) scale(1.02);
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+/* --- PAKKETTEN SECTIE --- */
+.packages-section {
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.packages-section h2 {
+    color: var(--text);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.packages-section p {
+    color: var(--text);
+}
+
+.bg-dark-card {
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--text);
+}
+
+.link-yellow {
+    color: var(--poke-yellow);
+}
+
+.link-yellow:hover {
+    color: #ffd700;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.package-box {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px 30px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    position: relative;
+    color: var(--text);
+}
+
+.package-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.package-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.package-box .price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--poke-red);
+    margin: 20px 0;
+}
+
+.btn {
+    background: var(--poke-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    width: 80%;
+}
+
+.btn:hover {
+    background: var(--poke-darkblue);
+}
+
+.highlight {
+    border: 3px solid var(--poke-yellow);
+    background: rgba(251, 191, 36, 0.1);
+    transform: scale(1.05);
+}
+
+.highlight:hover {
+    transform: scale(1.08);
+}
+
+.highlight .btn {
+    background: var(--poke-red);
+}
+
+.highlight .btn:hover {
+    background: #cc0000;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background: var(--background);
+    color: #9ca3af;
+    padding: 60px 20px 20px;
+    text-align: center;
+    border-top: 5px solid var(--poke-red);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-col h3 {
+    color: var(--poke-yellow);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    color: var(--text);
+    font-size: 1.3rem;
+}
+
+.footer-col ul li a:hover {
+    color: var(--poke-yellow);
+}
+
+/* --- LOGIN FORMULIER --- */
+.login-content {
+    background-color: var(--bg-light);
+}
+
+.login {
+    border-top: 5px solid var(--poke-blue);
+}
+
+.login button {
+    background-color: var(--poke-blue);
+}
+
+.login button:hover {
+    background-color: var(--poke-darkblue);
+}
+
+.register-button {
+    color: var(--poke-red);
+    font-weight: 600;
+}
+
+/* --- KAART ONTWERP --- */
+.container33 {
+    max-width: 1200px;
+}
+
+.header33 h1 {
+    color: var(--poke-darkblue);
+}
+
+.card33 {
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.card33:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-color: var(--poke-yellow);
+}
+
+.avatar33 {
+    background: var(--background);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.name33 {
+    color: #111827;
+    font-size: 1.1rem;
+}
+
+.rating33 {
+    color: var(--poke-yellow);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.chip33 {
+    background: var(--bg-light);
+    color: #475569;
+    font-weight: 600;
+}
+
+.btn33-primary {
+    background: var(--poke-blue);
+    border-radius: 8px;
+}
+
+.btn33-primary:hover {
+    background: var(--poke-darkblue);
+}
+
+.btn33-outline {
+    border-color: var(--poke-blue);
+    color: var(--poke-blue);
+    border-radius: 8px;
+}
+
+/* --- TABEL --- */
+table {
+    background: var(--background);
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+thead {
+    background: var(--background);
+    border-bottom: 2px solid #e2e8f0;
+}
+
+th {
+    color: var(--poke-darkblue);
+    font-weight: 700;
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-light);
+}
+
+td {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.actions a {
+    color: var(--poke-blue);
+}
+
+.actions a.delete {
+    color: var(--poke-red);
+}
+
+/* --- USERBEHEER STYLES --- */
+.userbeheer-body {
+    background: var(--background);
+}
+
+.name-row {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 12px;
+}
+
+.name-row .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.name-row .field.small {
+    flex: 1;
+}
+
+.name-row label {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.name-row input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #374151;
+    background: var(--background);
+    color: white;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.name-row input:focus {
+    border-color: var(--poke-yellow);
+}
+
+.userbeheer h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.userbeheer table {
+    width: 100%;
+    margin: 0 auto 25px;
+    border-collapse: collapse;
+    background: var(--background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.userbeheer th,
+.userbeheer td {
+    border-bottom: 1px solid #2b3551;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.userbeheer th {
+    color:     var(--poke-yellow);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.userbeheer tr:nth-child(even) {
+    background: #151d31;
+}
+
+.userbeheer tbody tr:hover {
+    background: #1e293b;
+    transition: 0.2s ease;
+}
+
+.userbeheer td:last-child {
+    text-align: right;
+    white-space: nowrap;
+    width: 150px;
+}
+
+.userbeheer .cta-btn {
+    display: inline-block;
+    background: var(--background);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.userbeheer .cta-btn:hover {
+    background: var(--background);
+    transform: scale(1.05);
+}
+
+.userbeheer .cta-btn.delete {
+    background: #ef4444;
+}
+
+.userbeheer .cta-btn.delete:hover {
+    background: #dc2626;
+}
+
+.modal33 {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--background);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal33.show {
+    display: flex;
+}
+
+.modal-content33 {
+    background: var(--background);
+    border-radius: 12px;
+    padding: 25px 30px;
+    width: 380px;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-actions33 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn33 {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn33-primary {
+    background:     var(--poke-yellow);
+    color: white;
+}
+
+.btn33-primary:hover {
+    background: #16a34a;
+}
+
+.btn33-outline {
+    background: transparent;
+    border: 1px solid     var(--poke-yellow);
+    color:     var(--poke-yellow);
+}
+
+.btn33-outline:hover {
+    background:     var(--poke-yellow);
+    color: white;
+}
+
+.modal-content33 input,
+.modal-content33 select {
+    width: 90%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: var(--background);
+    color: white;
+    font-size: 14px;
+}
+
+.modal-content33 input:focus,
+.modal-content33 select:focus {
+    border-color:     var(--poke-yellow);
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .name-row {
+        flex-direction: column;
+    }
+
+    .userbeheer td:last-child {
+        text-align: center;
+        white-space: normal;
+    }
+
+    .userbeheer .cta-btn {
+        display: block;
+        margin: 4px auto;
+        width: 100px;
+    }
+}
+
+/* --- FULLCALENDAR AANPASSINGEN --- */
+.fc-button {
+    background-color: var(--poke-blue) !important;
+}
+
+.fc-button:hover {
+    background-color: var(--poke-darkblue) !important;
+}
+
+.fc-daygrid-day.fc-day-today {
+    background-color: #eff6ff !important;
+    border: 2px solid var(--poke-blue) !important;
+}
+
+.fc-event {
+    background-color: var(--poke-red) !important;
+    border: none !important;
+}
+
+/* --- BETALINGSFORMULIER --- */
+.container-pay {
+    background: var(--bg-white);
+    border-top: 5px solid var(--poke-yellow);
+}
+
+.pay-btn {
+    background: var(--poke-blue);
+    font-weight: 700;
+    border-radius: 12px;
+}
+
+.pay-btn:hover {
+    background: var(--poke-darkblue);
+}
+
+/* --- NOTIFICATIES --- */
+.alert {
+    background-color: #fef2f2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+.success {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.toast33 {
+    background: var(--poke-blue);
+}
+
+/* --- TOPBAR & NAVBAR --- */
+.top-bar {
+    height: 90px;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 4px solid var(--poke-yellow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--poke-blue);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.profile-btn:hover {
+    background-color: var(--poke-darkblue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 76, 202, 0.4);
+}
+
+.profile-icon {
+    width: 24px;
+    height: 24px;
+    background-color: var(--bg-white);
+    color: var(--poke-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hamburger-btn {
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text);
+    background: none;
+    border: none;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.hamburger-btn:hover {
+    color: var(--poke-yellow);
+    transform: scale(1.1);
+}
+
+.sidebar {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: -280px;
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 80px;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.5);
+    border-left: 3px solid var(--poke-yellow);
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #e5e7eb;
+    display: block;
+    transition: 0.3s;
+    border-right: 5px solid transparent;
+}
+
+.sidebar a:hover {
+    color: var(--bg-white);
+    background-color: var(--poke-darkblue);
+    border-right: 5px solid var(--poke-yellow);
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 36px;
+    color: var(--poke-red);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1500;
+    backdrop-filter: blur(2px);
+}
+
+.column {
+    width: 15%;
+    background-repeat: repeat-y;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.column.left {
+    background-color: var(--poke-red);
+    float: left;
+}
+
+.column.right {
+    background-color: var(--poke-darkblue);
+    float: right;
+}
+
+.main-content-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 90px;
+    box-sizing: border-box;
+    background: var(--background);
+}
+
+.column {
+    width: 15%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.column.left {
+    background-color: var(--poke-red);
+    left: 0;
+    float: none;
+}
+
+.column.right {
+    background-color: var(--poke-darkblue);
+    right: 0;
+    float: none;
+}
+
+/* --- PROFILE STYLES --- */
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--poke-yellow);
+}
+
+.profile-welcome {
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.profile-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #374151;
+}
+
+.profile-tabs .tab {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-tabs .tab:hover {
+    color: var(--text);
+    border-bottom-color: var(--poke-blue);
+}
+
+.profile-tabs .tab.active {
+    color: var(--poke-yellow);
+    border-bottom-color: var(--poke-yellow);
+}
+
+.profile-content {
+    background: var(--background);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.profile-section {
+    margin-bottom: 40px;
+}
+
+.profile-section h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: var(--background);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--poke-yellow);
+}
+
+.form-group small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: var(--poke-blue);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-state p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.kaarten-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #374151;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--poke-yellow);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.kaarten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.kaart-card {
+    background: var(--background);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #374151;
+    transition: 0.3s;
+}
+
+.kaart-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-color: var(--poke-yellow);
+}
+
+.kaart-image {
+    width: 100%;
+    height: 300px;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.kaart-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.kaart-info {
+    padding: 15px;
+}
+
+.kaart-info h3 {
+    color: var(--text);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.kaart-id {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.kaart-prijs {
+    color: var(--poke-yellow);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.kaart-datum {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.wallet-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: var(--background);
+    border-radius: 12px;
+}
+
+.wallet-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wallet-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--background);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--poke-yellow);
+}
+
+.wallet-info h3 {
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.wallet-amount {
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.wallet-actions .cta-btn {
+    background: var(--poke-yellow);
+    color: #000;
+    border: none;
+}
+
+.wallet-actions .cta-btn:hover {
+    background: #ffd700;
+}
+
+.transactie-historie h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.transactie-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--background);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.transactie-table thead {
+    background: var(--background);
+}
+
+.transactie-table th {
+    padding: 15px;
+    text-align: left;
+    color: var(--poke-yellow);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.transactie-table td {
+    padding: 15px;
+    border-top: 1px solid #374151;
+    color: var(--text);
+}
+
+.transactie-table tbody tr:hover {
+    background: var(--background);
+}
+
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status.active {
+    background:     var(--poke-yellow);
+    color: white;
+}
+
+.status.expired {
+    background: #ef4444;
+    color: white;
+}
+
+/* --- KAARTEN TOEVOEGEN (API) --- */
+.kaarten-toevoegen {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.stats-bar {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: var(--poke-yellow);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.search-section {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.search-section h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 15px;
+}
+
+.search-form {
+    margin-top: 15px;
+}
+
+.search-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input-group input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: var(--background);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.search-input-group input:focus {
+    outline: none;
+    border-color: var(--poke-yellow);
+}
+
+.search-results {
+    margin-top: 30px;
+}
+
+.search-results h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card-preview {
+    background: var(--background);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #374151;
+    transition: 0.3s;
+}
+
+.card-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-color: var(--poke-yellow);
+}
+
+.card-image-preview {
+    width: 100%;
+    height: 350px;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-info-preview {
+    padding: 15px;
+}
+
+.card-info-preview h4 {
+    color: var(--text);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card-set {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.card-rarity {
+    color: var(--poke-yellow);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-badge.exists {
+    background:     var(--poke-yellow);
+    color: white;
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #1f2937;
+    border-radius: 12px;
+}
+
+.page-info {
+    color: var(--text);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .profile-tabs {
+        flex-direction: column;
+    }
+
+    .wallet-overview {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .kaarten-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transactie-table {
+        font-size: 0.85rem;
+    }
+
+    .transactie-table th,
+    .transactie-table td {
+        padding: 10px;
+    }
+
+    .search-input-group {
+        flex-direction: column;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagination {
+        flex-direction: column;
+    }
+}
+
+/* --- PAKKETTEN & BETALEN --- */
+.pakketten-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.pakketten-container h2 {
+    color: var(--poke-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.pakketten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pakket-card {
+    background: var(--background);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #374151;
+    transition: 0.3s;
+}
+
+.pakket-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    border-color: var(--poke-yellow);
+}
+
+.pakket-header {
+    background: var(--background);
+    padding: 20px;
+    position: relative;
+}
+
+.pakket-header h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--poke-yellow);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.pakket-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.pakket-amount {
+    margin-bottom: 15px;
+}
+
+.pakket-amount .amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--poke-yellow);
+    display: block;
+}
+
+.pakket-amount .currency {
+    color: var(--muted);
+    font-size: 1.2rem;
+}
+
+.pakket-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.pakket-time {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pakket-time.permanent {
+    color:     var(--poke-yellow);
+}
+
+.pakket-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--poke-yellow);
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.pakket-btn:hover {
+    background: #ffd700;
+    transform: scale(1.05);
+}
+
+.pakketten-beheer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.admin-section {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.admin-section h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--background);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table thead {
+    background: var(--background);
+}
+
+.admin-table th {
+    padding: 15px;
+    text-align: left;
+    color: var(--poke-yellow);
+    font-weight: 600;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-top: 1px solid #374151;
+    color: var(--text);
+}
+
+.admin-table tbody tr:hover {
+    background: var(--background);
+}
+
+.betalen-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.betalen-container h2 {
+    color: var(--poke-yellow);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.payment-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #374151;
+}
+
+.summary-card h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #374151;
+    color: var(--text);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    margin-top: 10px;
+    border-top: 2px solid var(--poke-yellow);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--poke-yellow);
+}
+
+.wallet-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--poke-yellow);
+    margin-bottom: 15px;
+}
+
+.wallet-display i {
+    font-size: 2.5rem;
+}
+
+.wallet-after {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.payment-form {
+    background: var(--background);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.payment-form h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.payment-note {
+    background: var(--background);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--poke-yellow);
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.payment-note i {
+    color: var(--poke-yellow);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.payment-note p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+    .pakketten-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* --- VEILINGEN SYSTEEM --- */
+.veilingen-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.veilingen-container h2 {
+    color: var(--poke-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.veilingen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.veiling-card {
+    background: var(--background);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #374151;
+    transition: 0.3s;
+}
+
+.veiling-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    border-color: var(--poke-yellow);
+}
+
+.veiling-header {
+    background: var(--background);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.veiling-header h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.veiling-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.veiling-badge.active {
+    background:     var(--poke-yellow);
+    color: white;
+}
+
+.veiling-image {
+    width: 100%;
+    height: 300px;
+    background: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.veiling-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.veiling-info {
+    padding: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #374151;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.info-row .value {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.info-row .value.highlight {
+    color: var(--poke-yellow);
+    font-size: 1.1rem;
+}
+
+.info-row.time-remaining {
+    background: var(--background);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--poke-yellow);
+    font-weight: 600;
+}
+
+.veiling-actions {
+    padding: 15px 20px;
+    background: var(--background);
+}
+
+.veiling-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.veiling-detail-header {
+    margin-bottom: 30px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--poke-yellow);
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    color: #ffd700;
+}
+
+.veiling-detail-header h2 {
+    color: var(--poke-yellow);
+    font-size: 2.5rem;
+}
+
+.veiling-detail-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.veiling-main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+.veiling-image-large {
+    width: 100%;
+    background: var(--background);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.veiling-image-large img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.veiling-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-section {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.detail-section h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+}
+
+.detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #374151;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item .label {
+    color: var(--muted);
+}
+
+.detail-item .value {
+    color: var(--text);
+    font-weight: 600;
+    text-align: right;
+}
+
+.detail-item .value.highlight {
+    color: var(--poke-yellow);
+    font-size: 1.2rem;
+}
+
+.bod-section {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.bod-section h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+}
+
+.wallet-info {
+    background: var(--background);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+}
+
+.wallet-info i {
+    color: var(--poke-yellow);
+    font-size: 1.5rem;
+}
+
+.bod-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.veiling-ended {
+    background: var(--background);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.veiling-ended i {
+    font-size: 4rem;
+    color: var(--muted);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.veiling-ended p {
+    color: var(--muted);
+    font-size: 1.2rem;
+}
+
+.biedingen-history {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.biedingen-history h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+}
+
+.biedingen-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.bod-item {
+    background: var(--background);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #374151;
+}
+
+.bod-item.highest {
+    background: var(--background);
+    border-color: var(--poke-yellow);
+}
+
+.bod-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    flex: 1;
+}
+
+.bod-amount {
+    color: var(--poke-yellow);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 15px;
+}
+
+.bod-time {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.mijn-biedingen-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.mijn-biedingen-container h2 {
+    color: var(--poke-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.biedingen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.bieding-card {
+    background: var(--background);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #374151;
+    transition: 0.3s;
+}
+
+.bieding-card.active {
+    border-color: var(--poke-blue);
+}
+
+.bieding-card.ended {
+    border-color: var(--muted);
+    opacity: 0.8;
+}
+
+.bieding-card.winner {
+    border-color:     var(--poke-yellow);
+    background: var(--background);
+}
+
+.bieding-header {
+    background: var(--background);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bieding-header h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.winner-badge {
+    background:     var(--poke-yellow);
+    color: white;
+}
+
+.ended-badge {
+    background: var(--muted);
+    color: white;
+}
+
+.active-badge {
+    background: var(--poke-yellow);
+    color: #000;
+}
+
+.bieding-image {
+    width: 100%;
+    height: 250px;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bieding-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bieding-info {
+    padding: 20px;
+}
+
+.bieding-actions {
+    padding: 15px 20px;
+    background: var(--background);
+}
+
+.veiling-toevoegen {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text);
+}
+
+.veiling-toevoegen h2 {
+    color: var(--poke-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.veiling-form {
+    background: var(--background);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #374151;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h3 {
+    color: var(--poke-yellow);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.veiling-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background: var(--background);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.veiling-form select:focus {
+    outline: none;
+    border-color: var(--poke-yellow);
+}
+
+@media (max-width: 1024px) {
+    .veiling-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .veiling-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .veilingen-grid,
+    .biedingen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .veiling-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .bod-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* --- NIEUWE VEILINGEN GRID --- */
+.nieuwe-veilingen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.veiling-preview-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.veiling-preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--poke-yellow);
+}
+
+.veiling-preview-image {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.veiling-preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.veiling-preview-info {
+    padding: 15px;
+    color: var(--text);
+}
+
+.veiling-preview-info h4 {
+    color: var(--text);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.veiling-preview-price {
+    color: var(--poke-yellow);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.veiling-preview-link {
+    display: inline-block;
+    background: var(--poke-red);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.veiling-preview-link:hover {
+    background: #cc0000;
+}
+/* --- Genel Ayarlar & Değişkenler --- */
+:root {
+    --card-bg-color: #1f2937; /* Koyu gri arka plan (bg-dark-card karşılığı) */
+    --text-color: #ffffff;     /* Beyaz yazı */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Layout (Yerleşim) --- */
+.random-card {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column; /* Mobilde alt alta */
+    align-items: center;
+    gap: 2.5rem; /* gap-10 */
+    max-width: 72rem; /* max-w-6xl */
+    margin: 0 auto;   /* Ortalamak için */
+}
+
+/* Masaüstü (Desktop) Görünümü */
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row; /* Yan yana */
+    }
+
+    .card-wrapper {
+        width: 50%; /* md:w-1/2 */
+    }
+}
+
+/* --- Kart Konteynırı --- */
+.card-wrapper {
+    width: 100%;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
+    padding: 1rem;
+    min-height: 500px;
+
+    /* İçeriği ortalamak için Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Yazı Stilleri --- */
+.card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700;   /* font-bold */
+    margin-bottom: 1rem;
+}
+
+.card-rarity-text {
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 1rem;
+}
+
+/* --- 3D Flip Animasyon CSS'leri --- */
+
+/* Sahne (Perspective) */
+.flip-card-scene {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 16rem;  /* Kart genişliği */
+    height: 24rem; /* Kart yüksekliği */
+    margin: 0 auto;
+}
+
+/* Dönme işlemini yapan iç katman */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* JS ile eklenecek sınıf: Kartı döndürür */
+.flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Ön ve Arka yüzler */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+}
+
+.flip-card-front {
+    background-color: transparent;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Resim ayarları */
+.poke-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* --- Fade (Belirme) Efekti --- */
+.fade-content {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.fade-content.visible {
+    opacity: 1;
+}
+
+/* --- Genel Ayarlar & Değişkenler --- */
+:root {
+    --card-bg-color: #1f2937; /* Koyu gri arka plan (bg-dark-card karşılığı) */
+    --text-color: #ffffff;     /* Beyaz yazı */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Layout (Yerleşim) --- */
+.random-card {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column; /* Mobilde alt alta */
+    align-items: center;
+    gap: 2.5rem; /* gap-10 */
+    max-width: 72rem; /* max-w-6xl */
+    margin: 0 auto;   /* Ortalamak için */
+}
+
+/* Masaüstü (Desktop) Görünümü */
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row; /* Yan yana */
+    }
+
+    .card-wrapper {
+        width: 50%; /* md:w-1/2 */
+    }
+}
+
+/* --- Kart Konteynırı --- */
+.card-wrapper {
+    width: 100%;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
+    padding: 1rem;
+    min-height: 500px;
+
+    /* İçeriği ortalamak için Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Yazı Stilleri --- */
+.card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700;   /* font-bold */
+    margin-bottom: 1rem;
+}
+
+.card-rarity-text {
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 1rem;
+}
+
+/* --- 3D Flip Animasyon CSS'leri --- */
+
+/* Sahne (Perspective) */
+.flip-card-scene {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 16rem;  /* Kart genişliği */
+    height: 24rem; /* Kart yüksekliği */
+    margin: 0 auto;
+}
+
+/* Dönme işlemini yapan iç katman */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* JS ile eklenecek sınıf: Kartı döndürür */
+.flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Ön ve Arka yüzler */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+}
+
+.flip-card-front {
+    background-color: transparent;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Resim ayarları */
+.poke-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* --- Fade (Belirme) Efekti --- */
+.fade-content {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.fade-content.visible {
+    opacity: 1;
+}
+/* Resim yüklenirken arka planda hafif bir loader veya renk olsun */
+.flip-card-back {
+    background-color: #2d3748; /* Koyu gri */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Resim yüklendiğinde tam otursun */
+.poke-img {
+    background-color: #2d3748;
+}
+
+/* --- Home Page Card & Wallet Styles --- */
+
+/* Header ve Cüzdan Rozeti */
+.card-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.wallet-badge {
+    background-color: #2d3748; /* Koyu Gri */
+    border: 1px solid #4a5568;
+    padding: 0.5rem 1.2rem;
+    border-radius: 9999px; /* Yuvarlak */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fbbf24; /* Altın Sarısı */
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.wallet-icon {
+    font-size: 1.2rem;
+}
+
+/* Detaylı Bilgi Grid'i */
+.card-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Sütun */
+    gap: 1rem;
+    width: 100%;
+    max-width: 20rem;
+    margin-top: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3); /* Yarı saydam arka plan */
+    padding: 1rem;
+    border-radius: 0.75rem;
+    opacity: 0; /* Başlangıçta gizli (Fade efekti için) */
+    transition: opacity 0.5s ease;
+}
+
+.card-stats-grid.visible {
+    opacity: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #a0aec0; /* Gri metin */
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.stat-value.highlight {
+    color: #48bb78; /* Yeşil renk (Fiyat için) */
+}
+
+/* --- Split Section Layout --- */
+.split-section {
+    padding: 3rem 1rem;
+    background-color: #1a202c; /* Koyu arka plan */
+}
+
+.split-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Masaüstü için yan yana yap */
+@media (min-width: 768px) {
+    .split-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .left-panel {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-panel {
+        width: 50%;
+    }
+}
+
+.section-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* --- Dashboard Boxes (Right Side) --- */
+.dashboard-box {
+    background-color: #2d3748; /* Box rengi */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: white;
+}
+
+/* Wallet Box Styles */
+.wallet-box h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #cbd5e0;
+}
+
+.welcome-text {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-bottom: 1rem;
+}
+
+.wallet-display {
+    background-color: #1a202c;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4a5568;
+}
+
+.wallet-display.locked {
+    opacity: 0.7;
+}
+
+.wallet-display .amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fbbf24; /* Gold */
+}
+
+.top-up-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #3182ce;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.top-up-btn:hover {
+    background-color: #2b6cb0;
+}
+
+/* Stats Box Styles */
+.card-name-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-bottom: 2px solid #4a5568;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.stats-grid.visible {
+    opacity: 1;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #4a5568;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row .label {
+    color: #a0aec0;
+    font-weight: 500;
+}
+
+.stat-row .value {
+    font-weight: bold;
+}
+
+.stat-row.highlight .value {
+    color: #48bb78; /* Yeşil fiyat */
+    font-size: 1.1rem;
+}
+
+/* --- Flip Card Adjustments --- */
+.flip-card-scene {
+    width: 18rem;
+    height: 25rem;
+    perspective: 1000px;
+    margin-bottom: 1rem;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.flip-card-front {
+    background-color: transparent;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.poke-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.75rem;
+}
+
+/* --- 3D TILT EFFECT & VISUAL UPGRADES --- */
+
+/* Kart wrapper: Mouse eventleri yakalamak için */
+.card-tilt-wrapper {
+    perspective: 1000px;
+    width: 18rem;
+    height: 25rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Kartın kendisi: Smooth dönüşler için transition ayarı */
+.flip-card-inner {
+    /* Transition'ı kaldırdık veya çok kısalttık çünkü mouse hareketine anlık tepki vermeli */
+    /* Sadece ilk flip (is-flipped) olurken yavaş dönsün istiyoruz,
+       ama tilt olurken (mousemove) anlık olsun. JS ile kontrol ediyoruz. */
+    transition: transform 0.1s ease-out;
+}
+
+/* Glare (Parlama) Efekti */
+.card-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    pointer-events: none; /* Mouse'u engellemesin */
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.2s;
+    mix-blend-mode: overlay; /* Işık efekti gibi karışsın */
+}
+
+/* --- SET INFO (Package) STYLES --- */
+.set-info-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: #2d3748;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    margin-top: 1rem;
+    border: 1px solid #4a5568;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: relative;
+    z-index: 5;
+}
+
+.set-info-badge.visible {
+    opacity: 1;
+}
+
+.set-logo-img {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+}
+
+.set-name-text {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- TYPE ICONS STYLES --- */
+.type-icons-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end; /* Sağa yasla */
+}
+
+.type-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+    transition: transform 0.2s;
+}
+
+.type-icon-img:hover {
+    transform: scale(1.2);
+}
+
+.flip-card-back {
+    overflow: hidden;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+}
+
+/* --- Navbar Wallet Badge --- */
+.nav-wallet-badge {
+    background-color: #2d3748;
+    color: #fbbf24; /* Gold rengi */
+    padding: 0.4rem 0.8rem;
+    border-radius: 99px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    border: 1px solid #4a5568;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.nav-wallet-badge:hover {
+    background-color: #4a5568;
+    transform: scale(1.05);
+}
+
+/* Küçük ekranlarda navbar'daki cüzdanı gizle (Sidebar'da var zaten) */
+@media (max-width: 600px) {
+    .nav-wallet-badge {
+        display: none;
+    }
+    .desktop-only {
+        display: none;
+    }
+}
+
+/* --- Sidebar İyileştirmeleri --- */
+.sidebar-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #2d3748; /* Koyu arka plan */
+    color: white;
+    border-bottom: 1px solid #4a5568;
+}
+
+.sidebar-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #3182ce;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.sidebar-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-wallet {
+    color: #fbbf24;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.card-counter {
+    font-family: 'Courier New', monospace; /* Dijital sayaç havası */
+    color: #a0aec0;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(0,0,0,0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* --- PACKAGES SECTION --- */
+.packages-section {
+    padding: 4rem 1rem;
+    background-color: #1a202c; /* Ana arka planla uyumlu koyu renk */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.section-subtitle {
+    color: #a0aec0;
+    margin-top: 0.5rem;
+}
+
+/* Grid Layout */
+.packages-grid {
+    display: grid;
+    /* Otomatik sığdır: Ekran küçüldükçe sütun sayısı azalır */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kart Tasarımı */
+.package-card {
+    background-color: #2d3748;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #4a5568;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: #63b3ed;
+}
+
+/* Özel Etiketler (Popular / Best Value) */
+.pkg-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fbbf24; /* Gold */
+    color: #1a202c;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 99px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.featured-pkg {
+    border: 2px solid #fbbf24; /* Öne çıkanlar için altın çerçeve */
+}
+
+/* Resim Alanı */
+.pkg-image-wrapper {
+    width: 100%;
+    height: 260px; /* Resim yüksekliği sabitlendi */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.pkg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi kutuya sığdırır */
+    transition: transform 0.3s;
+}
+
+.package-card:hover .pkg-img {
+    transform: scale(1.05); /* Hover olunca resim hafif zoom yapar */
+}
+
+/* İçerik Alanı */
+.pkg-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pkg-title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.pkg-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    background-color: #1a202c;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.pkg-pd {
+    color: #48bb78; /* Yeşil PD */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.pkg-euro {
+    color: #e2e8f0; /* Beyaz Euro */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Satın Al Butonu */
+.pkg-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #3182ce;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.pkg-btn:hover {
+    background-color: #2b6cb0;
+}
+
+.featured-pkg .pkg-btn {
+    background-color: #fbbf24;
+    color: #1a202c;
+}
+
+.featured-pkg .pkg-btn:hover {
+    background-color: #d69e2e;
+}
+.pkg-image-wrapper {
+    width: 100%;
+    aspect-ratio: 5244 / 3720;
+    overflow: hidden;
+    background-color: #2d3748; /* Resim yüklenmezse görünecek renk */
+    border-bottom: 1px solid #4a5568; /* Resim ile yazı arasına ince çizgi */
+}
+
+.pkg-img {
+    width: 100%;
+    height: 100%;
+    /* 'cover' resmi kutuya yayar.
+       Aspect-ratio kullandığımız için resim ve kutu aynı oranda olacak,
+       bu yüzden kesilme (crop) olmaz. */
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Daha yumuşak zoom efekti */
+}
+
+/* Hover Efekti */
+.package-card:hover .pkg-img {
+    transform: scale(1.05); /* Üstüne gelince hafif yakınlaşır */
+}

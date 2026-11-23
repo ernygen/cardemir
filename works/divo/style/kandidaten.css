@@ -1,0 +1,40 @@
+.kand-filterbar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+.kand-search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.kand-search-input {
+    width: 260px;
+    padding: 8px 36px 8px 10px;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 0.95rem;
+}
+.kand-search-btn {
+    position: absolute;
+    right: 6px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #007bc7;
+    cursor: pointer;
+    padding: 4px;
+}
+.kand-select {
+    min-width: 200px;
+    padding: 8px 30px 8px 12px;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    font-size: 0.95rem;
+    appearance: auto;
+}
+.kand-card { padding: 16px 12px 12px; }
+.k-col-acties { display:flex; gap:8px; justify-content:flex-end; }
+.k-col-acties .btn-actie { min-width:98px; padding:6px 12px; font-size:0.78rem; }

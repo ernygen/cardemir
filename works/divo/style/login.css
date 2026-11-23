@@ -1,0 +1,168 @@
+.digid-login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.digid-login-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 60px 40px;
+    border-radius: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.digid-login-card h1 {
+    font-size: 2rem;
+    color: var(--ro-lintblauw);
+    margin-bottom: 40px;
+}
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.login-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 60px 40px;
+    text-align: left;
+}
+.login-card-centered { text-align: center; }
+.login-card-centered .login-form { text-align: left; }
+.digid-real-logo {
+    display: block;
+    margin: 0 auto 24px;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+.digid-submit-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.digid-submit-btn {
+    min-width: 220px;
+    border-radius: 4px;
+    font-size: 1.05rem;
+}
+.login-card h1 {
+    font-size: 2rem;
+    color: var(--ro-lintblauw);
+    margin-bottom: 32px;
+    text-align: center;
+}
+.login-app-card { max-width: 380px; padding: 36px 32px 32px; }
+.login-app-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 0 0 28px;
+}
+.login-app-title .app-naam { color: #e67a1e; font-weight: 700; }
+.app-login-form .form-group { margin-bottom: 22px; }
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.login-option {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.login-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.login-icon.icon-digid { background: #000; padding: 4px; }
+.login-icon.icon-digid img { width: 100%; height: 100%; object-fit: contain; }
+.login-icon.icon-mint { background: #9be3d9; }
+.login-icon.icon-blue { background: #1e5fa3; }
+.login-btn {
+    flex: 1;
+    height: 42px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-btn.btn-digid { background: #e67a1e; }
+.login-btn.btn-digid:hover { background: #cf6d1a; }
+.login-btn.btn-purple { background: #3b2d6b; }
+.login-btn.btn-purple:hover { background: #2f2355; }
+.login-btn.btn-black { background: #111; }
+.login-btn.btn-black:hover { background: #000; }
+.digid-button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+.digid-button-group:hover,
+.digid-button-group:focus { transform: scale(1.03); outline: none; }
+.digid-button-group:focus { box-shadow: 0 0 0 4px var(--ro-geel); }
+.digid-logo-box {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    height: 54px;
+    padding: 0 16px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.digid-text-box {
+    background-color: #DF5D24;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: bold;
+    height: 54px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.digid-button-group:hover .digid-text-box { background-color: #C14C1A; }
+.digid-button-group-nav { max-width: 180px; height: 40px; margin-left: 15px; }
+.digid-logo-box-nav { height: 40px; font-size: 0.9rem; padding: 0 10px; }
+.digid-text-box-nav { height: 40px; font-size: 0.9rem; }
+.login-form { width: 100%; text-align: left; }
+.login-form .form-group { margin-bottom: 25px; }
+.login-form label { font-size: 1.1rem; margin-bottom: 8px; }
+.login-form input { padding: 14px; font-size: 1.1rem; }

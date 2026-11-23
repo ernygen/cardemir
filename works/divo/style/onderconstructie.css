@@ -1,0 +1,101 @@
+.uc-page {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 60px;
+    background: #fff;
+}
+.uc-container {
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--ro-grijs-2);
+    border-top: 4px solid var(--ro-geel);
+    padding: 40px 36px 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    position: relative;
+}
+.uc-icon {
+    width: 86px;
+    height: 86px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: var(--ro-lintblauw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ro-geel);
+    font-size: 44px;
+}
+.uc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ro-grijs-1);
+    border: 1px solid var(--ro-grijs-2);
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ro-lintblauw);
+    margin-bottom: 18px;
+}
+.uc-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ro-geel);
+    display: inline-block;
+    animation: uc-pulse 1.6s infinite;
+}
+.uc-code { font-weight: normal; text-transform: none; color: var(--ro-grijs-7); }
+.uc-title {
+    font-size: 2rem;
+    color: var(--ro-lintblauw);
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+.uc-text {
+    color: var(--ro-grijs-7);
+    font-size: 1.05rem;
+    margin: 0 auto 22px;
+    max-width: 520px;
+}
+.uc-strip {
+    display: flex;
+    height: 10px;
+    margin: 0 -36px 28px;
+    overflow: hidden;
+}
+.uc-strip span {
+    flex: 1;
+    background: repeating-linear-gradient(135deg, var(--ro-geel) 0 14px, #111 14px 28px);
+}
+.uc-strip span:nth-child(even) { opacity: 0.9; }
+.uc-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.uc-btn-primary { font-size: 1rem; min-height: 44px; display:inline-flex; align-items:center; gap:8px; border-radius: 0; }
+.uc-btn-secondary { font-size: 0.95rem; min-height: 44px; display:inline-flex; align-items:center; gap:8px; border-radius: 0; }
+.uc-help {
+    margin-top: 22px;
+    font-size: 0.85rem;
+    color: var(--ro-grijs-7);
+}
+.uc-help a { color: var(--ro-donkerblauw); text-decoration: underline; }
+@keyframes uc-pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+}
+.verkiezing-header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+.verkiezing-sub { color: var(--ro-grijs-7); margin: 0 0 20px; }
+.badge-gestemd { background: #e6f4e8; color: var(--ro-groen); border:1px solid var(--ro-groen); padding:2px 8px; font-size:0.85rem; margin-left:8px; }
+.stem-form { background:#fff; border:1px solid var(--ro-grijs-2); border-top:4px solid var(--ro-hemelblauw); padding:24px; box-shadow:0 2px 10px rgba(0,0,0,0.04); }
+.stem-keuzes { display:grid; gap:16px; }
+.stem-blanco label { font-weight:bold; display:flex; gap:8px; align-items:center; }
+.stem-blanco small { color: var(--ro-grijs-7); display:block; margin-top:4px; }

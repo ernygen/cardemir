@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrader</title>
+    <link rel="icon" type="image/svg+xml" href="image/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+<div id="overlay" onclick="closeNav()"></div>
+<div class="top-bar">
+    <a href="?page=home" class="nav-logo-link"><img class="nav-logo" src="image/logo_mini.png" alt="PokeTrader"></a>
+    <div class="nav-right">
+        <span id="nav-user"></span>
+        <button class="hamburger-btn" onclick="openNav()" aria-label="Menu">&#9776;</button>
+    </div>
+</div>
+<div id="mySidebar" class="sidebar"></div>
+
+<div id="flash"></div>
+<div id="page"></div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.right = "0";
+        document.getElementById("overlay").style.display = "block";
+    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.right = "-280px";
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+<script src="app.js"></script>
+<script src="../back.js"></script>
+</body>
+</html>

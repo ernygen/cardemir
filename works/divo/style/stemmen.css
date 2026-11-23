@@ -1,0 +1,451 @@
+.stemmen-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.stemmen-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--ro-donkerblauw);
+    margin-bottom: 30px;
+}
+
+/* Party grid */
+.partij-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px 16px;
+    border: 1px solid #000;
+    padding: 22px 16px;
+    background: #fff;
+}
+.partij-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.15s;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-text);
+}
+.partij-tile:hover {
+    transform: scale(1.03);
+}
+.partij-logo-box {
+    width: 100%;
+    max-width: 160px;
+    height: 72px;
+    border: 1.5px solid #1a1a1a;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6px;
+    position: relative;
+}
+.partij-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background: transparent;
+}
+.partij-logo-box .logo-placeholder {
+    color: var(--ro-grijs-7);
+    font-size: 0.85rem;
+}
+.partij-tile-naam {
+    font-size: 0.85rem;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+/* Eerder gekozen partij: non-clickable, grid-vorm blijft */
+.partij-tile.is-gekozen {
+    cursor: not-allowed;
+}
+.partij-tile.is-gekozen:hover {
+    transform: none;
+}
+.partij-tile.is-gekozen img {
+    opacity: 0.3;
+}
+.partij-tile.is-gekozen .partij-tile-naam {
+    color: var(--ro-grijs-7);
+}
+.partij-gekozen-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    color: var(--ro-lintblauw);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--ro-lintblauw);
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Blanco stemmen button on party grid */
+.blancostemmen-wrap {
+    text-align: center;
+    margin-top: 28px;
+}
+.blancostemmen-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    min-height: 48px;
+    background: #f5e6c8;
+    border: 2px solid #d4b97a;
+    border-radius: 4px;
+    color: #5a4a2a;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-text);
+    transition: all 0.15s;
+}
+.blancostemmen-btn:hover {
+    background: #edd9a8;
+    border-color: #c0a060;
+}
+
+/* Candidate selection */
+.kandidaat-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.kandidaat-header-logo {
+    width: 100px;
+    height: 60px;
+    border: 1.5px solid #1a1a1a;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+    flex-shrink: 0;
+}
+.kandidaat-header-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.kandidaat-header-naam {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.kandidaat-kees-label {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+.kandidaat-list {
+    width: 100%;
+}
+.kandidaat-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.kandidaat-row:hover {
+    background: var(--ro-grijs-1);
+}
+.kandidaat-row.selected {
+    background: #e8f4fd;
+}
+.kandidaat-radio {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--ro-grijs-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--ro-grijs-7);
+    background: #fff;
+}
+.kandidaat-row.selected .kandidaat-radio {
+    border-color: var(--ro-hemelblauw);
+    background: var(--ro-hemelblauw);
+    color: #fff;
+}
+.kandidaat-info {
+    flex: 1;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.kandidaat-naam {
+    font-weight: 600;
+    min-width: 200px;
+}
+.kandidaat-woonplaats {
+    color: var(--ro-grijs-7);
+    min-width: 120px;
+}
+.kandidaat-geslacht {
+    color: var(--ro-grijs-7);
+    min-width: 40px;
+}
+
+/* Stem Aanpassen (Controle) page */
+.controle-rij {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid var(--ro-grijs-2);
+    border-left: 4px solid var(--ro-lintblauw);
+}
+.controle-rij-logo {
+    width: 80px;
+    height: 60px;
+    border: 1px solid var(--ro-grijs-3);
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 3px;
+    flex-shrink: 0;
+}
+.controle-rij-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.controle-rij-logo-blank {
+    background: var(--ro-grijs-1);
+    color: var(--ro-grijs-3);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.controle-rij-content {
+    flex: 1;
+    min-width: 0;
+}
+.controle-rij-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ro-grijs-7);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 1px;
+}
+.controle-rij-partij {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ro-donkerblauw);
+    margin-bottom: 1px;
+}
+.controle-rij-details {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.controle-rij-naam {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 0.85rem;
+}
+.controle-rij-sep {
+    color: var(--ro-grijs-3);
+}
+.controle-rij-info {
+    color: var(--ro-grijs-7);
+    font-size: 0.8rem;
+}
+
+/* Akkoord checkbox */
+.akkoord-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+.akkoord-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    cursor: pointer;
+}
+.akkoord-check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--ro-hemelblauw);
+    cursor: pointer;
+}
+
+/* Navigation */
+.stemmen-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.stemmen-nav-right {
+    margin-left: auto;
+}
+.btn-volgende {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    min-height: 48px;
+    background: var(--ro-lintblauw);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-text);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-volgende:hover {
+    background: #0d2f4f;
+}
+.btn-vorige {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    min-height: 48px;
+    background: transparent;
+    color: var(--ro-lintblauw);
+    border: 2px solid var(--ro-lintblauw);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-text);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.btn-vorige:hover {
+    background: var(--ro-lintblauw);
+    color: #fff;
+}
+.btn-klaar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    min-height: 48px;
+    background: var(--ro-lintblauw);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-text);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-klaar:hover {
+    background: #0d2f4f;
+}
+.btn-klaar:disabled {
+    background: var(--ro-grijs-3);
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Enkele pagina: keuze secties */
+.keuze-sectie {
+    background: #f8f9fa;
+    border: 1px solid var(--ro-grijs-2);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.keuze-sectie-titel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ro-donkerblauw);
+    margin-bottom: 18px;
+}
+.keuze-nummer {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--ro-lintblauw);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.keuze-optioneel {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--ro-grijs-7);
+}
+
+/* Verander button */
+.btn-verander {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 60px;
+    padding: 0;
+    background: var(--ro-lintblauw);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-text);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.btn-verander:hover {
+    background: var(--ro-donkerblauw);
+}
+
+@media (max-width: 900px) {
+    .partij-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+    .partij-grid { grid-template-columns: repeat(2, 1fr); }
+    .kandidaat-info { flex-wrap: wrap; gap: 10px; }
+    .kandidaat-naam { min-width: auto; }
+}

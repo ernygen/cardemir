@@ -1,0 +1,98 @@
+.admin-login-btn {
+    background-color: var(--ro-lintblauw);
+    color: #ffffff;
+    padding: 0 20px;
+    font-family: var(--font-text);
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-radius: 0;
+    z-index: 10;
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+.admin-login-btn:hover { background-color: var(--ro-donkerblauw); }
+.site-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--ro-grijs-2);
+    padding: 0;
+    height: 62px;
+}
+.admin-header {
+    background-color: var(--ro-lintblauw);
+    padding: 0;
+    height: 62px;
+}
+.navbar-invert .admin-nav a {
+    transition: background-color 0.22s ease, color 0.22s ease;
+}
+.navbar-invert .admin-nav a:hover {
+    background-color: #ffffff;
+    color: var(--ro-lintblauw);
+    text-decoration: none;
+}
+.navbar-inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+    height: 100%;
+}
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+.navbar-logo:focus,
+.navbar-logo:active,
+.navbar-logo:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.navbar-logo img {
+    height: 42px;
+    width: auto;
+    display: block;
+    outline: none;
+    border: none;
+}
+.admin-header .navbar-logo img {
+    height: 38px;
+    filter: brightness(0) invert(1);
+}
+.admin-nav {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0;
+    max-width: none;
+    margin: 0;
+    height: 100%;
+}
+.admin-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0 18px;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+.admin-nav a:hover { text-decoration: none; }
